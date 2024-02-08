@@ -43,7 +43,7 @@ function DualLangeTextField(filename, element) {
         // method of retrieving file contents from server found at:
         // https://stackoverflow.com/a/25796149
         let req = new XMLHttpRequest();
-        req.open("GET", `/text/${lang}/${this.filename}`, true);
+        req.open("GET", `/luna/text/${lang}/${this.filename}`, true);
         req.send();
         console.log();
         req.onreadystatechange = () => {  // use an arrow function so I can use 'this' to access the textfield
