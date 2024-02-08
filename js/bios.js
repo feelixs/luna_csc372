@@ -1,4 +1,4 @@
-var textFields = []
+var biosTextFields = []
 
 document.addEventListener('DOMContentLoaded', function () {
     /*
@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
         Tutorial I used for running JS on page load:
         https://stackoverflow.com/a/25984032
     */
-    textFields.push(new DualLangeTextField(`/luna/text/bios/carmen`, document.getElementById('carmen-bio')));
-    textFields.push(new DualLangeTextField(`/luna/text/bios/marco`, document.getElementById('marco-bio')));
-    textFields.push(new DualLangeTextField(`/luna/text/bios/nicolas`, document.getElementById('nicolas-bio')));
+    biosTextFields.push(new DualLangeTextField(`/luna/text/bios/carmen`, document.getElementById('carmen-bio')));
+    biosTextFields.push(new DualLangeTextField(`/luna/text/bios/marco`, document.getElementById('marco-bio')));
+    biosTextFields.push(new DualLangeTextField(`/luna/text/bios/nicolas`, document.getElementById('nicolas-bio')));
     loadContentInLang(currentLang);
 })
 
@@ -25,7 +25,7 @@ function loadContentInLang(language) {
     /*
         This is run when the page initially loads, and whenever the language is changed.
     */
-    for (let i = 0; i < textFields.length; i++) {
-        textFields[i].getText(language);
+    for (let i = 0; i < biosTextFields.length; i++) {
+        biosTextFields[i].getText(language);
     }
 }
