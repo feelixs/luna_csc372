@@ -36,7 +36,7 @@ function applyNavLanguageChange(newLang) {
     document.getElementById('media-nav').innerHTML = newLang === 'es' ? 'Medios' : 'Media';
 }
 
-function DualLangeTextField(name, baseDir, element) {
+function DualLangTextField(name, baseDir, element) {
     /*
         A text field which can be converted between english and spanish.
         The files of the text in both languages must be fetched from the server prior to displaying any text.
@@ -59,4 +59,3 @@ function DualLangeTextField(name, baseDir, element) {
     }
     return this
 }
-
