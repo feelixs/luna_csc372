@@ -36,22 +36,26 @@ function applyNavLanguageChange(newLang) {
     document.getElementById('media-nav').innerHTML = newLang === 'es' ? 'Medios' : 'Media';
 }
 
-function DualLangeTextField(filepath, element) {
+function DualLangeTextField(baseDir, element) {
     /*
         A text field which can be converted between english and spanish.
         The files of the text in both languages must be fetched from the server prior to displaying any text.
     */
-    this.filepath = filepath; // the name of the file - used as /text/{language}/{filename}
+    this.baseDir = baseDir; // the name of the file - used as /text/{language}/{filename}
     this.element = element; // the element whose inner html should be set to this.getText()
     this.getText = function(lang) {
         // method of retrieving file contents from server found at:
-        // https://stackoverflow.com/a/25796149
-        fetch(this.filepath)
+        // https://stackoverflow.com/a/14446538
+        fetch(`${this.baseDir}/${lang}`)
           .then((res) => res.text())
           .then((text) => {
-            this.element.innerHTML = text;
+              this.element.innerHTML = text;
            })
-          .catch((e) => console.error(e));
+          .catch((e) => {
+              console.error(e);
+              this.element.innerHTML = "";
+          });
     }
     return this
 }
+
