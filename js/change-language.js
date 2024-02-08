@@ -46,9 +46,7 @@ function DualLangeTextField(filepath, element) {
     this.getText = function(lang) {
         // method of retrieving file contents from server found at:
         // https://stackoverflow.com/a/25796149
-        let init = {'method': 'GET'};
-        let req = new Request(this.filepath, init);
-        this.element.innerHTML = req.text();
+        this.element.innerHTML = fetch(this.filepath)
     }
     return this
 }
