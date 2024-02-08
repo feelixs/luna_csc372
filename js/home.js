@@ -1,4 +1,5 @@
 var homeTextFields = []
+var homeDualImages = []
 
 document.addEventListener('DOMContentLoaded', function () {
     /*
@@ -7,10 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
         Tutorial I used for running JS on page load:
         https://stackoverflow.com/a/25984032
     */
-    homeTextFields.push(new DualLangTextField('div1', `/luna/text/home/div1`, document.getElementById('div1-text')));
-    homeTextFields.push(new DualLangTextField('div2', `/luna/text/home/div2`, document.getElementById('div2-text')));
-    homeTextFields.push(new DualLangTextField('footer', `/luna/text/home/footer`, document.getElementById('footer-text')));
-    homeTextFields.push(new DualLangTextField( 'copyright',`/luna/text/home/copyright`, document.getElementById('copyright')));
+    homeTextFields.push(new DualLangTextField(`/luna/text/home/div1`, document.getElementById('div1-text')));
+    homeTextFields.push(new DualLangTextField(`/luna/text/home/div2`, document.getElementById('div2-text')));
+    homeTextFields.push(new DualLangTextField(`/luna/text/home/footer`, document.getElementById('footer-text')));
+    homeTextFields.push(new DualLangTextField( `/luna/text/home/copyright`, document.getElementById('copyright')));
+    homeDualImages.push(new DualLangImage('luna/images/buttons/globe-white-en.webp', 'luna/images/buttons/globe-white-es.webp', document.getElementById('change-language-btn')))
     loadContentInLang(currentLang);
 })
 
@@ -29,5 +31,8 @@ function loadContentInLang(language) {
     */
     for (let i = 0; i < homeTextFields.length; i++) {
         homeTextFields[i].getText(language);
+    }
+    for (let i = 0; i < biosTextFields.length; i++) {
+        homeDualImages[i].getImg(language);
     }
 }

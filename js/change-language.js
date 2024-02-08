@@ -20,29 +20,18 @@ function applyNavLanguageChange(newLang) {
     /*
         Applies language change between english and spanish for the navigation bar's text
     */
-    const changeLangImg = document.getElementById('change-language');
-
-    if (newLang === 'es') {  // toggle the image between saying 'eng' and 'esp'
-        changeLangImg.src = `images/buttons/globe-white-en.webp`;
-        changeLangImg.alt = `Button that changes language to English`;
-    } else {
-        changeLangImg.src = `images/buttons/globe-white-es.webp`;
-        changeLangImg.alt = `Button that changes language to Spanish`;
-    }
-
     // manually update the nav's text fields
     document.getElementById('home-nav').innerHTML = newLang === 'es' ? 'Inicio' : 'Home';
     document.getElementById('bios-nav').innerHTML = newLang === 'es' ? 'Sobre' : 'About';
     document.getElementById('media-nav').innerHTML = newLang === 'es' ? 'Medios' : 'Media';
 }
 
-function DualLangTextField(name, baseDir, element) {
+function DualLangTextField(baseDir, element) {
     /*
         A text field which can be converted between english and spanish.
         The files of the text in both languages must be fetched from the server prior to displaying any text.
     */
-    this.name = name;
-    this.baseDir = baseDir; // the name of the file - used as /text/{language}/{filename}
+    this.baseDir = baseDir; // the name of the file - used as {path-to-baseDir}/{language}
     this.element = element; // the element whose inner html should be set to this.getText()
     this.getText = function(lang) {
         // method of retrieving file contents from server found at:
@@ -54,8 +43,18 @@ function DualLangTextField(name, baseDir, element) {
            })
           .catch((e) => {
               console.error(e);
-              this.element.innerHTML = "";
+              // don't modify the innerhtml, and default to whatever is hard-coded into it
           });
+    }
+    return this
+}
+
+function DualLangImage(enPath, esPath, element) {
+    this.enPath = enPath;
+    this.esPath = esPath;
+    this.element = element;
+    this.getImg = function (lang) {
+        this.element.src = lang === 'en' ? this.enPath : this.esPath;
     }
     return this
 }

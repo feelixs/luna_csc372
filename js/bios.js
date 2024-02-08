@@ -1,5 +1,5 @@
 var biosTextFields = []
-
+var bioDualImages = []
 document.addEventListener('DOMContentLoaded', function () {
     /*
         Load this page's content in the default language when the page loads.
@@ -7,11 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
         Tutorial I used for running JS on page load:
         https://stackoverflow.com/a/25984032
     */
-    biosTextFields.push(new DualLangTextField('carmen', `/luna/text/bios/carmen`, document.getElementById('carmen-bio')));
-    biosTextFields.push(new DualLangTextField('marco', `/luna/text/bios/marco`, document.getElementById('marco-bio')));
-    biosTextFields.push(new DualLangTextField('nicolas', `/luna/text/bios/nicolas`, document.getElementById('nicolas-bio')));
-    biosTextFields.push(new DualLangTextField('footer', `/luna/text/home/footer`, document.getElementById('footer-text')));
-    biosTextFields.push(new DualLangTextField( 'copyright',`/luna/text/home/copyright`, document.getElementById('copyright')));
+    biosTextFields.push(new DualLangTextField(`/luna/text/bios/carmen`, document.getElementById('carmen-bio')));
+    biosTextFields.push(new DualLangTextField(`/luna/text/bios/marco`, document.getElementById('marco-bio')));
+    biosTextFields.push(new DualLangTextField(`/luna/text/bios/nicolas`, document.getElementById('nicolas-bio')));
+    biosTextFields.push(new DualLangTextField(`/luna/text/home/footer`, document.getElementById('footer-text')));
+    biosTextFields.push(new DualLangTextField( `/luna/text/home/copyright`, document.getElementById('copyright')));
+    bioDualImages.push(new DualLangImage('luna/images/buttons/globe-white-en.webp', 'luna/images/buttons/globe-white-es.webp', document.getElementById('change-language-btn')))
     loadContentInLang(currentLang);
 })
 
@@ -29,5 +30,8 @@ function loadContentInLang(language) {
     */
     for (let i = 0; i < biosTextFields.length; i++) {
         biosTextFields[i].getText(language);
+    }
+    for (let i = 0; i < biosTextFields.length; i++) {
+        bioDualImages[i].getImg(language);
     }
 }
