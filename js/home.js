@@ -8,5 +8,8 @@ function applyMainLanguageChange(newlang) {
 }
 
 function loadContentInLang(language) {
+    /*
+        This is run when the page initially loads, and whenever the language is changed.
+    */
 
 }

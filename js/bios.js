@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
         Tutorial I used for running JS on page load:
         https://stackoverflow.com/a/25984032
     */
-    textFields.push(new DualLangeTextField("carmen", document.getElementById('carmen-bio')));
-    textFields.push(new DualLangeTextField("marco", document.getElementById('marco-bio')));
-    textFields.push(new DualLangeTextField("nicolas", document.getElementById('nicolas-bio')));
+    textFields.push(new DualLangeTextField(`/luna/text/bios/carmen/${currentLang}`, document.getElementById('carmen-bio')));
+    textFields.push(new DualLangeTextField(`/luna/text/bios/marco/${currentLang}`, document.getElementById('marco-bio')));
+    textFields.push(new DualLangeTextField(`/luna/text/bios/nicolas/${currentLang}`, document.getElementById('nicolas-bio')));
     loadContentInLang(currentLang);
 })
 

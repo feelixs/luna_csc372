@@ -36,18 +36,18 @@ function applyNavLanguageChange(newLang) {
     document.getElementById('media-nav').innerHTML = newLang === 'es' ? 'Medios' : 'Media';
 }
 
-function DualLangeTextField(filename, element) {
+function DualLangeTextField(filepath, element) {
     /*
         A text field which can be converted between english and spanish.
         The files of the text in both languages must be fetched from the server prior to displaying any text.
     */
-    this.filename = filename; // the name of the file - used as /text/{language}/{filename}
+    this.filepath = filepath; // the name of the file - used as /text/{language}/{filename}
     this.element = element; // the element whose inner html should be set to this.getText()
     this.getText = function(lang) {
         // method of retrieving file contents from server found at:
         // https://stackoverflow.com/a/25796149
         let req = new XMLHttpRequest();
-        req.open("GET", `/luna/text/${lang}/${this.filename}`, true);
+        req.open("GET", this.filepath, true);
         req.send();
         console.log();
         req.onreadystatechange = () => {  // use an arrow function so I can use 'this' to access the textfield
