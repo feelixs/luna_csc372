@@ -1,6 +1,12 @@
 var textFields = []
 
 document.addEventListener('DOMContentLoaded', function () {
+    /*
+        Load this page's content in the default language when the page loads.
+
+        Tutorial I used for running JS on page load:
+        https://stackoverflow.com/a/25984032
+    */
     textFields.push(new DualLangeTextField("carmen", document.getElementById('carmen-bio')));
     textFields.push(new DualLangeTextField("marco", document.getElementById('marco-bio')));
     textFields.push(new DualLangeTextField("nicolas", document.getElementById('nicolas-bio')));
