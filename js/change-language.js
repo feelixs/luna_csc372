@@ -1,6 +1,5 @@
 var currentLang = 'en';
 
-
 function toggleLanguage() {
     /*
        Swaps between Spanish and English, and update the page's text to the new lang
@@ -35,4 +34,24 @@ function applyNavLanguageChange(newLang) {
     document.getElementById('home-nav').innerHTML = newLang === 'es' ? 'Inicio' : 'Home';
     document.getElementById('bios-nav').innerHTML = newLang === 'es' ? 'Sobre' : 'About';
     document.getElementById('media-nav').innerHTML = newLang === 'es' ? 'Medios' : 'Media';
+}
+
+function dualLangeTextField(filename, element) {
+    this.filename = filename; // the name of the file - used as /text/{language}/{filename}
+    this.element = element; // the element whose inner html should be set to this.getText()
+    this.getText = function(lang) {
+        // method of retrieving file contents from server found at:
+        // https://stackoverflow.com/a/25796149
+        let req = new XMLHttpRequest();
+        req.open("GET", `/text/${lang}/${this.filename}`, true);
+        req.send();
+        console.log();
+        req.onreadystatechange = function() {
+            if (req.readyState === 4 && req.status === 200) {
+                this.element.innerHTML = req.responseText;
+                return req.responseText;
+            }
+        }
+    }
+    return this
 }
