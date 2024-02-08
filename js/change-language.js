@@ -36,11 +36,12 @@ function applyNavLanguageChange(newLang) {
     document.getElementById('media-nav').innerHTML = newLang === 'es' ? 'Medios' : 'Media';
 }
 
-function DualLangeTextField(baseDir, element) {
+function DualLangeTextField(name, baseDir, element) {
     /*
         A text field which can be converted between english and spanish.
         The files of the text in both languages must be fetched from the server prior to displaying any text.
     */
+    this.name = name;
     this.baseDir = baseDir; // the name of the file - used as /text/{language}/{filename}
     this.element = element; // the element whose inner html should be set to this.getText()
     this.getText = function(lang) {
