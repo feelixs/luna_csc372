@@ -3,6 +3,7 @@ var textFields = []
 document.addEventListener('DOMContentLoaded', function () {
     textFields.push(new DualLangeTextField("carmen", document.getElementById('carmen-bio')));
     textFields.push(new DualLangeTextField("marco", document.getElementById('marco-bio')));
+    textFields.push(new DualLangeTextField("nicolas", document.getElementById('nicolas-bio')));
     loadContentInLang(currentLang);
 })
 
