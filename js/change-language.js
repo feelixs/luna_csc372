@@ -1,10 +1,5 @@
 var currentLang = 'en';
 
-document.addEventListener('DOMContentLoaded', function () {
-    // load page content in the current language
-    loadContentInLang(currentLang)
-})
-
 function toggleLanguage() {
     /*
        Swaps between Spanish and English, and update the page's text to the new lang
