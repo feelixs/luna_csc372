@@ -32,7 +32,7 @@ function loadContentInLang(language) {
     for (let i = 0; i < homeTextFields.length; i++) {
         homeTextFields[i].getText(language);
     }
-    for (let i = 0; i < biosTextFields.length; i++) {
+    for (let i = 0; i < homeDualImages.length; i++) {
         homeDualImages[i].getImg(language);
     }
 }

@@ -31,7 +31,7 @@ function loadContentInLang(language) {
     for (let i = 0; i < biosTextFields.length; i++) {
         biosTextFields[i].getText(language);
     }
-    for (let i = 0; i < biosTextFields.length; i++) {
+    for (let i = 0; i < bioDualImages.length; i++) {
         bioDualImages[i].getImg(language);
     }
 }
