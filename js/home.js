@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     homeTextFields.push(new DualLangTextField(`/luna/text/home/div2`, document.getElementById('div2-text')));
     homeTextFields.push(new DualLangTextField(`/luna/text/home/footer`, document.getElementById('footer-text')));
     homeTextFields.push(new DualLangTextField( `/luna/text/home/copyright`, document.getElementById('copyright')));
-    homeDualImages.push(new DualLangImage('luna/images/buttons/globe-white-en.webp', 'luna/images/buttons/globe-white-es.webp', document.getElementById('change-language-btn')))
+    homeDualImages.push(new DualLangImage('luna/images/buttons/globe-white-en.webp', 'luna/images/buttons/globe-white-es.webp', document.getElementById('change-language-img')))
     loadContentInLang(currentLang);
 })
 
