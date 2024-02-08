@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
     biosTextFields.push(new DualLangeTextField('carmen', `/luna/text/bios/carmen`, document.getElementById('carmen-bio')));
     biosTextFields.push(new DualLangeTextField('marco', `/luna/text/bios/marco`, document.getElementById('marco-bio')));
     biosTextFields.push(new DualLangeTextField('nicolas', `/luna/text/bios/nicolas`, document.getElementById('nicolas-bio')));
+    biosTextFields.push(new DualLangeTextField('footer', `/luna/text/home/footer`, document.getElementById('footer-text')));
+    biosTextFields.push(new DualLangeTextField( 'copyright',`/luna/text/home/copyright`, document.getElementById('copyright')));
     loadContentInLang(currentLang);
 })
 
