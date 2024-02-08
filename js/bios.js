@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     biosTextFields.push(new DualLangTextField(`/luna/text/bios/nicolas`, document.getElementById('nicolas-bio')));
     biosTextFields.push(new DualLangTextField(`/luna/text/home/footer`, document.getElementById('footer-text')));
     biosTextFields.push(new DualLangTextField( `/luna/text/home/copyright`, document.getElementById('copyright')));
-    bioDualImages.push(new DualLangImage('luna/images/buttons/globe-white-en.webp', 'luna/images/buttons/globe-white-es.webp', document.getElementById('change-language-img')))
+    bioDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp', 'images/buttons/globe-white-es.webp', document.getElementById('change-language-img')))
     loadContentInLang(currentLang);
 })
 
