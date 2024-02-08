@@ -46,16 +46,9 @@ function DualLangeTextField(filepath, element) {
     this.getText = function(lang) {
         // method of retrieving file contents from server found at:
         // https://stackoverflow.com/a/25796149
-        let req = new XMLHttpRequest();
-        req.open("GET", `${this.filepath}`, true);
-        req.send();
-        console.log(`Loaded ${this.filepath}`);
-        req.onreadystatechange = () => {  // use an arrow function so I can use 'this' to access the textfield
-            if (req.readyState === 4 && req.status === 200) {
-                this.element.innerHTML = req.responseText;
-                return req.responseText;
-            }
-        }
+        let init = {'method': 'GET'};
+        let req = new Request(this.filepath, init);
+        this.element.innerHTML = req.text();
     }
     return this
 }
