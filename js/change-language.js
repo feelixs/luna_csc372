@@ -36,7 +36,7 @@ function applyNavLanguageChange(newLang) {
     document.getElementById('media-nav').innerHTML = newLang === 'es' ? 'Medios' : 'Media';
 }
 
-function dualLangeTextField(filename, element) {
+function DualLangeTextField(filename, element) {
     this.filename = filename; // the name of the file - used as /text/{language}/{filename}
     this.element = element; // the element whose inner html should be set to this.getText()
     this.getText = function(lang) {
