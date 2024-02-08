@@ -12,6 +12,6 @@ function applyMainLanguageChange(newlang) {
     document.title = newlang === 'es' ? 'Luna | Sobre' : 'Luna | About';
 
     for (let i = 0; i < textFields.length; i++) {
-        textFields[i].getText()
+        textFields[i].getText(newlang)
     }
 }

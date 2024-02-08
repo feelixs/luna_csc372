@@ -46,7 +46,7 @@ function DualLangeTextField(filename, element) {
         req.open("GET", `/text/${lang}/${this.filename}`, true);
         req.send();
         console.log();
-        req.onreadystatechange = function() {
+        req.onreadystatechange = () => {  // use an arrow function so I can use 'this' to access the textfield
             if (req.readyState === 4 && req.status === 200) {
                 this.element.innerHTML = req.responseText;
                 return req.responseText;
