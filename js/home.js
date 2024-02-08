@@ -4,4 +4,9 @@ function applyMainLanguageChange(newlang) {
     */
 
     document.title = newlang === 'es' ? 'Luna | Inicio' : 'Luna | Home';
+    loadContentInLang(newlang)
+}
+
+function loadContentInLang(language) {
+
 }

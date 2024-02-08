@@ -10,8 +10,11 @@ function applyMainLanguageChange(newlang) {
         Applies language change to the page's main text, this will be overriden for each page
     */
     document.title = newlang === 'es' ? 'Luna | Sobre' : 'Luna | About';
+    loadContentInLang(newlang)
+}
 
+function loadContentInLang(language) {
     for (let i = 0; i < textFields.length; i++) {
-        textFields[i].getText(newlang)
+        textFields[i].getText(language)
     }
 }
