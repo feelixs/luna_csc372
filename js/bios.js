@@ -1,8 +1,8 @@
 var textFields = []
 
 document.addEventListener('DOMContentLoaded', function () {
-    textFields.push(dualLangeTextField("carmen"), document.getElementById('carmen-bio'))
-    textFields.push(dualLangeTextField("marco"), document.getElementById('marco-bio'))
+    textFields.push(new dualLangeTextField("carmen"), document.getElementById('carmen-bio'))
+    textFields.push(new dualLangeTextField("marco"), document.getElementById('marco-bio'))
 })
 
 function applyMainLanguageChange(newlang) {
