@@ -42,8 +42,11 @@ function DualLangTextField(baseDir, element) {
                     // don't modify the innerhtml, and default to whatever is hard-coded into it
                     throw new Error(`${this.baseDir}/${lang} - error fetching file`);
                 }
-                this.element.innerHTML = res.text();  // if successful, set the innerhtml to the file contents
+                return res.text();
             })
+            .then((text) => {
+                this.element.innerHTML = text; // if successful, set the innerhtml to the file contents
+            });
     }
     return this
 }
