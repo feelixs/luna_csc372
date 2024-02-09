@@ -36,15 +36,14 @@ function DualLangTextField(baseDir, element) {
     this.getText = function(lang) {
         // method of retrieving file contents from server found at:
         // https://stackoverflow.com/a/14446538
-        fetch(`${this.baseDir}/${lang}`)
-          .then((res) => res.text())
-          .then((text) => {
-              this.element.innerHTML = text;
-           })
-          .catch((e) => {
-              console.error(e);
-              // don't modify the innerhtml, and default to whatever is hard-coded into it
-          });
+        fetch(`${this.baseDir}/${lang}`) // fetch file from the server
+            .then((res) => {
+                if (!res.ok) { // if response was not successful
+                    // don't modify the innerhtml, and default to whatever is hard-coded into it
+                    throw new Error(`${this.baseDir}/${lang} - error fetching file`);
+                }
+                this.element.innerHTML = res.text();  // if successful, set the innerhtml to the file contents
+            })
     }
     return this
 }
@@ -53,7 +52,7 @@ function DualLangImage(enPath, esPath, element) {
     this.enPath = enPath;
     this.esPath = esPath;
     this.element = element;
-    this.getImg = function (lang) {
+    this.getImg = function(lang) {
         // should display the opposite language of the current one
         // (the one that the button will change the webpage to if clicked)
         this.element.src = lang === 'es' ? this.enPath : this.esPath;
