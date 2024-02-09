@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
     biosTextFields.push(new DualLangTextField(`/luna/text/bios/carmen`, document.getElementById('carmen-bio')));
     biosTextFields.push(new DualLangTextField(`/luna/text/bios/marco`, document.getElementById('marco-bio')));
     biosTextFields.push(new DualLangTextField(`/luna/text/bios/nicolas`, document.getElementById('nicolas-bio')));
-    biosTextFields.push(new DualLangTextField(`/luna/text/home/footer`, document.getElementById('footer-text')));
-    biosTextFields.push(new DualLangTextField( `/luna/text/home/copyright`, document.getElementById('copyright')));
+    biosTextFields.push(new DualLangTextField(`/luna/text/footer`, document.getElementById('footer-text')));
+    biosTextFields.push(new DualLangTextField( `/luna/text/copyright`, document.getElementById('copyright')));
     bioDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp', 'images/buttons/globe-white-es.webp', document.getElementById('change-language-img')))
     loadContentInLang(currentLang);
 })

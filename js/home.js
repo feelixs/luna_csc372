@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
     */
     homeTextFields.push(new DualLangTextField(`/luna/text/home/div1`, document.getElementById('div1-text')));
     homeTextFields.push(new DualLangTextField(`/luna/text/home/div2`, document.getElementById('div2-text')));
-    homeTextFields.push(new DualLangTextField(`/luna/text/home/footer`, document.getElementById('footer-text')));
-    homeTextFields.push(new DualLangTextField( `/luna/text/home/copyright`, document.getElementById('copyright')));
+    homeTextFields.push(new DualLangTextField(`/luna/text/footer`, document.getElementById('footer-text')));
+    homeTextFields.push(new DualLangTextField( `/luna/text/copyright`, document.getElementById('copyright')));
     homeDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp', 'images/buttons/globe-white-es.webp', document.getElementById('change-language-img')))
     loadContentInLang(currentLang);
 })
