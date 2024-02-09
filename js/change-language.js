@@ -36,16 +36,19 @@ function DualLangTextField(baseDir, element) {
     this.getText = function(lang) {
         // method of retrieving file contents from server found at:
         // https://stackoverflow.com/a/14446538
-        let req = new XMLHttpRequest();
-        req.open("GET", `${this.baseDir}/${lang}`, true);
-        req.send();
-        console.log();
-        req.onreadystatechange = () => {  // use an arrow function so I can use 'this' to access the textfield
-            if (req.readyState === 4 && req.status === 200) {
-                this.element.innerHTML = req.responseText;
-                return req.responseText;
-            }
-        }
+        fetch(`${this.baseDir}/${lang}`) // fetch file from the server
+            .then((res) => {
+                if (!res.ok) { // if response was not successful
+                    // don't modify the innerhtml, and default to whatever is hard-coded into it
+                    throw new Error(`${this.baseDir}/${lang} - error fetching file`);
+                }
+                // for some reason, setting this.element.innerHTML here didn't work
+                // so let's return it instead, and set it outside this response clause
+                return res.text();
+            })
+            .then((text) => { // set it from the respone's return
+                this.element.innerHTML = text; // if successful, set the innerhtml to the file contents
+            });
     }
     return this
 }
