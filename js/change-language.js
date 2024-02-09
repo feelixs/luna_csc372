@@ -54,7 +54,9 @@ function DualLangImage(enPath, esPath, element) {
     this.esPath = esPath;
     this.element = element;
     this.getImg = function (lang) {
-        this.element.src = lang === 'en' ? this.enPath : this.esPath;
+        // should display the opposite language of the current one
+        // (the one that the button will change the webpage to if clicked)
+        this.element.src = lang === 'es' ? this.enPath : this.esPath;
     }
     return this
 }
