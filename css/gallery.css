@@ -19,6 +19,11 @@
     justify-content: center;
 }
 
+#gallery-placeholder {
+    margin: 40vh;
+    color: white;
+}
+
 @media (max-width: 1200px) {
     .gallery-container {
         flex-basis: 50%;
