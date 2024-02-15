@@ -1,0 +1,26 @@
+.gallery-box {
+    border: none;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gallery-img {
+    width: 100%; /* set width to 100% of its container instead of its default size */
+}
+
+.gallery-container {
+    flex-basis: 25%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 1200px) {
+    .gallery-container {
+        flex-basis: 50%;
+    }
+}
