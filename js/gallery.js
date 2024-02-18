@@ -62,9 +62,11 @@ function setAltToFile(img, filename) {
         .then((res) => {
             if (!res.ok) { // if response was not successful
                 img.alt = "undefined";
-            } else {
-                console.log(res.text())
-                img.alt = res.text();
             }
+            return res.text();
         })
+        .then((text) => { // set it from the respone's return
+            console.log(text);
+            img.alt = text;
+        });
 }
