@@ -10,7 +10,9 @@
 }
 
 .gallery-img {
-    height: 220px; /* set width to 100% of its container instead of its default size */
+    width: 100%;  /* set width to 100% of its container instead of its default size */
+    height: 22vw;
+    object-fit: cover; /* zooms in images when their aspect ratios don't match the div's square */
 }
 
 .gallery-container {
@@ -27,5 +29,10 @@
 @media (max-width: 1200px) {
     .gallery-container {
         flex-basis: 50%;
+    }
+    .gallery-img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
     }
 }
