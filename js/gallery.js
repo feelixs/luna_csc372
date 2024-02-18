@@ -62,6 +62,7 @@ function setAltToFile(img, filename) {
         .then((res) => {
             if (!res.ok) { // if response was not successful
                 img.alt = "undefined";
+                throw new Error(`/luna/images/gallery/alts/${filename} - error fetching file`);
             }
             return res.text();
         })
