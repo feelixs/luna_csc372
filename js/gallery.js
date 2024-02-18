@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     galTextFields.push(new DualLangTextField(`/luna/text/footer`, document.getElementById('footer-text')));
     galTextFields.push(new DualLangTextField( `/luna/text/copyright`, document.getElementById('copyright')));
     /* when we fetch the text from the server, we need a fullpath that included 'luna'.
-    * when we set the image div in a duallangimage, we don't need 'luna'*/
+     when we set the image div in a duallangimage, we don't need 'luna' */
     galDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp', 'images/buttons/globe-white-es.webp', document.getElementById('change-language-img')))
     loadContentInLang(currentLang);
     loadGallery();
@@ -36,7 +36,7 @@ function loadContentInLang(language) {
 }
 
 function loadGallery() {
-    document.getElementById('gallery-placeholder').remove(); /* remove the placeholder "loading gallery" text */
+    document.getElementById('gallery-placeholder').remove(); // remove the placeholder "loading gallery" text
 
     let pictures = [ '068A62F9.jpeg', 'P1001442.JPG',  '468D91AF.jpeg', 'P1001211.webp',
                              'P1001437.jpg', 'P1001384.jpg', 'P1001197.jpg', 'P1001430.jpg',
@@ -50,9 +50,20 @@ function loadGallery() {
         let img = document.createElement('img');
         img.className = 'gallery-img';
         img.src = `images/gallery/imgs/${pictures[i]}`;
-        img.alt = `images/gallery/alts/${pictures[i]}`;
+        setAltToFile(img, `${pictures[i]}.txt`); // dynamically det the img's alt
 
-        imgDiv.appendChild(img); /* put the image inside its div */
-        galleryDiv.appendChild(imgDiv); /* put the div inside the gallery */
+        imgDiv.appendChild(img); // put the image inside its div
+        galleryDiv.appendChild(imgDiv); // put the div inside the gallery
     }
+}
+
+function setAltToFile(img, filename) {
+    fetch(`luna/images/gallery/alts/${filename}`) // fetch file from the server
+        .then((res) => {
+            if (!res.ok) { // if response was not successful
+                img.alt = "undefined";
+            } else {
+                img.alt = res.text();
+            }
+        })
 }
