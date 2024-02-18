@@ -67,7 +67,6 @@ function setAltToFile(img, filename) {
             return res.text();
         })
         .then((text) => { // set it from the respone's return
-            console.log(text);
             img.alt = text;
         });
 }
