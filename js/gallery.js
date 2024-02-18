@@ -49,7 +49,8 @@ function loadGallery() {
         imgDiv.className = 'gallery-container';
         let img = document.createElement('img');
         img.className = 'gallery-img';
-        img.src = `images/gallery/${pictures[i]}`;
+        img.src = `images/gallery/imgs/${pictures[i]}`;
+        img.alt = `images/gallery/alts/${pictures[i]}`;
 
         imgDiv.appendChild(img); /* put the image inside its div */
         galleryDiv.appendChild(imgDiv); /* put the div inside the gallery */
