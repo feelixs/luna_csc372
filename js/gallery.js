@@ -57,7 +57,13 @@ function loadGallery() {
     }
 }
 
+function trimFilename(filename) {
+    // https://stackoverflow.com/a/2187293
+    return filename.substring(0, filename.lastIndexOf('/'));
+}
+
 function setAltToFile(img, filename) {
+    filename = trimFilename(filename);
     fetch(`/luna/images/gallery/alts/${filename}`) // fetch file from the server
         .then((res) => {
             if (!res.ok) { // if response was not successful
