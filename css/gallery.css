@@ -10,7 +10,7 @@
 }
 
 .gallery-img {
-    width: 100%; /* set width to 100% of its container instead of its default size */
+    height: 220px; /* set width to 100% of its container instead of its default size */
 }
 
 .gallery-container {
