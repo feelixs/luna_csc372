@@ -38,7 +38,10 @@ function loadContentInLang(language) {
 function loadGallery() {
     document.getElementById('gallery-placeholder').remove(); /* remove the placeholder "loading gallery" text */
 
-    let pictures = ['068A62F9.jpeg', '468D91AF.jpeg', 'Orquidias.jpg', 'P1000427.jpg'];
+    let pictures = ['P1001437.jpg', 'P1001384.jpg', 'P1001197.jpg', 'P1001430.jpg', 'P1001262.webp',
+        'P1001396.jpg', 'P1001427.jpg', 'P1001195.jpg', 'P1001442.JPG', '068A62F9.jpeg', 'P1000427.jpg',
+        'P1001211.webp', '468D91AF.jpeg', 'P1000708.jpg', 'P1001406.webp', 'P1001446.webp', 'Orquidias.jpg']
+
     let galleryDiv = document.getElementById('main-gallery-container');
     for (let i = 0; i < pictures.length; i++) {
         let imgDiv = document.createElement('div');
