@@ -58,7 +58,7 @@ function loadGallery() {
 }
 
 function setAltToFile(img, filename) {
-    fetch(`luna/images/gallery/alts/${filename}`) // fetch file from the server
+    fetch(`/luna/images/gallery/alts/${filename}`) // fetch file from the server
         .then((res) => {
             if (!res.ok) { // if response was not successful
                 img.alt = "undefined";
