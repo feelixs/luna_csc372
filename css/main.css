@@ -26,13 +26,12 @@ html, body {
     margin: 0 20px 0 20px;
 }
 
-
 .grey-bg {
     background-color: #444444;
 }
 
 .black-bg {
-    background-color: black;
+    background-color: #000000;
 }
 
 .rounded {
