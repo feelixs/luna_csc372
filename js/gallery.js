@@ -20,6 +20,7 @@ function applyMainLanguageChange(newlang) {
     */
 
     document.title = newlang === 'es' ? 'Luna | Medios' : 'Luna | Media';
+    document.getElementById('page-title').innerText = newlang === 'es' ? 'Galería' : 'Gallery';
     loadContentInLang(newlang)
 }
 
