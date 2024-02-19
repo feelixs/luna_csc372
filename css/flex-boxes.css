@@ -89,22 +89,6 @@
     }
 }
 
-.flex-container-bio {
-    display: flex;
-    padding-left: 0;
-    padding-right: 0;
-    justify-content: center;
-}
-
-@media (max-width: 1200px) {
-    .flex-container-bio {
-        display: block;
-        padding-left: 0;
-        padding-right: 0;
-        justify-content: initial;
-    }
-}
-
 .calendar-box {
     border: none;
     background-color: #f4f4f4;
