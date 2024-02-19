@@ -59,7 +59,7 @@ function loadGallery() {
 
 function trimFilename(filename) {
     // https://stackoverflow.com/a/2187293
-    return filename.substring(0, filename.lastIndexOf('/'));
+    return filename.substring(0, filename.lastIndexOf('.'));
 }
 
 function setAltToFile(img, filename) {
