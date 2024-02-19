@@ -50,7 +50,7 @@ function loadGallery() {
         let img = document.createElement('img');
         img.className = 'gallery-img';
         img.src = `images/gallery/imgs/${pictures[i]}`;
-        setAltToFile(img, `${pictures[i]}.txt`); // dynamically det the img's alt
+        setAltToFile(img, `${trimFilename(pictures[i])}.txt`); // dynamically det the img's alt
 
         imgDiv.appendChild(img); // put the image inside its div
         galleryDiv.appendChild(imgDiv); // put the div inside the gallery
@@ -63,7 +63,6 @@ function trimFilename(filename) {
 }
 
 function setAltToFile(img, filename) {
-    filename = trimFilename(filename);
     fetch(`/luna/images/gallery/alts/${filename}`) // fetch file from the server
         .then((res) => {
             if (!res.ok) { // if response was not successful
