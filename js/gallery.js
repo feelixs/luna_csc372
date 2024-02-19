@@ -48,7 +48,7 @@ function loadGallery() {
         let imgDiv = document.createElement('div');
         imgDiv.className = 'gallery-container';
         let img = document.createElement('img');
-        img.className = 'gallery-img';
+        img.className = 'gallery-img rounded';
         img.src = `images/gallery/imgs/${pictures[i]}`;
         setAltToFile(img, `${trimFilename(pictures[i])}.txt`); // dynamically det the img's alt
 

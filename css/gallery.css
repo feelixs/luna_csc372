@@ -12,6 +12,7 @@
 .gallery-img {
     width: 100%;  /* set width to 100% of its container instead of its default size */
     height: 22vw;
+    margin: 5px;
     object-fit: cover; /* zooms in images when their aspect ratios don't match the div's square */
 }
 
