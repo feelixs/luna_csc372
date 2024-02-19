@@ -11,8 +11,8 @@ html, body {
     height: 100%;
 }
 
-.inner-div {
-    margin: 0 20px 0 20px;
+.main-title-text {
+    font-size: 2em;
 }
 
 .page-title-white {
@@ -20,8 +20,12 @@ html, body {
     text-align: center;
     padding: 50px 0 20px 0;
     margin: 0 0 0 0;
-    font-size: 2em;
 }
+
+.inner-div {
+    margin: 0 20px 0 20px;
+}
+
 
 .grey-bg {
     background-color: #444444;
