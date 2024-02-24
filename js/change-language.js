@@ -24,6 +24,7 @@ function applyNavLanguageChange(newLang) {
     document.getElementById('home-nav').innerHTML = newLang === 'es' ? 'Inicio' : 'Home';
     document.getElementById('bios-nav').innerHTML = newLang === 'es' ? 'Sobre' : 'About';
     document.getElementById('media-nav').innerHTML = newLang === 'es' ? 'Medios' : 'Media';
+    document.getElementById('patreon-nav').innerHTML = newLang === 'es' ? 'Contacto' : 'Contact';
 }
 
 function DualLangTextField(baseDir, element) {
