@@ -1,5 +1,11 @@
 var currentLang = 'en';
 
+var $homeNav = $('#home-nav');
+var $biosNav = $('#bios-nav');
+var $mediaNav = $('#media-nav');
+var $patreonNav = $('#patreon-nav');
+
+
 function toggleLanguage() {
     /*
        Swaps between Spanish and English, and update the page's text to the new lang
@@ -21,10 +27,11 @@ function applyNavLanguageChange(newLang) {
         Applies language change between english and spanish for the navigation bar's text
     */
     // manually update the nav's text fields
-    document.getElementById('home-nav').innerHTML = newLang === 'es' ? 'Inicio' : 'Home';
-    document.getElementById('bios-nav').innerHTML = newLang === 'es' ? 'Sobre' : 'About';
-    document.getElementById('media-nav').innerHTML = newLang === 'es' ? 'Medios' : 'Media';
-    document.getElementById('patreon-nav').innerHTML = newLang === 'es' ? 'Contacto' : 'Contact';
+
+    $homeNav.html(newLang === 'es' ? 'Inicio' : 'Home');
+    $biosNav.html(newLang === 'es' ? 'Sobre' : 'About');
+    $mediaNav.html(newLang === 'es' ? 'Medios' : 'Media');
+    $patreonNav.html(newLang === 'es' ? 'Contacto' : 'Contact');
 }
 
 function DualLangTextField(baseDir, element) {
@@ -48,7 +55,7 @@ function DualLangTextField(baseDir, element) {
                 return res.text();
             })
             .then((text) => { // set it from the respone's return
-                this.element.innerHTML = text; // if successful, set the innerhtml to the file contents
+                $(this.element).html(text); // if successful, set the innerhtml to the file contents
             });
     }
     return this
