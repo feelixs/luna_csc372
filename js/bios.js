@@ -5,12 +5,13 @@ $(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
     */
-    biosTextFields.push(new DualLangTextField(`/luna/text/bios/carmen`, document.getElementById('carmen-bio')));
-    biosTextFields.push(new DualLangTextField(`/luna/text/bios/marco`, document.getElementById('marco-bio')));
-    biosTextFields.push(new DualLangTextField(`/luna/text/bios/nicolas`, document.getElementById('nicolas-bio')));
-    biosTextFields.push(new DualLangTextField(`/luna/text/footer`, document.getElementById('footer-text')));
-    biosTextFields.push(new DualLangTextField( `/luna/text/copyright`, document.getElementById('copyright')));
-    bioDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp', 'images/buttons/globe-white-es.webp', document.getElementById('change-language-img')))
+    biosTextFields.push(new DualLangTextField(`/luna/text/bios/carmen`, $('#carmen-bio')));
+    biosTextFields.push(new DualLangTextField(`/luna/text/bios/marco`, $('#marco-bio')));
+    biosTextFields.push(new DualLangTextField(`/luna/text/bios/nicolas`, $('#nicolas-bio')));
+    biosTextFields.push(new DualLangTextField(`/luna/text/footer`, $('#footer-text')));
+    biosTextFields.push(new DualLangTextField( `/luna/text/copyright`, $('#copyright')));
+    bioDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp',
+        'images/buttons/globe-white-es.webp', $('#change-language-img')))
     loadContentInLang(currentLang);
 });
 

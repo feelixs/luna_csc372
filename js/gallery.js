@@ -1,15 +1,16 @@
 var galTextFields = []
 var galDualImages = []
 
-document.addEventListener('DOMContentLoaded', function () {
+$(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
     */
-    galTextFields.push(new DualLangTextField(`/luna/text/footer`, document.getElementById('footer-text')));
-    galTextFields.push(new DualLangTextField( `/luna/text/copyright`, document.getElementById('copyright')));
+    galTextFields.push(new DualLangTextField(`/luna/text/footer`, $('#footer-text')));
+    galTextFields.push(new DualLangTextField( `/luna/text/copyright`, $('#copyright')));
     /* when we fetch the text from the server, we need a fullpath that included 'luna'.
      when we set the image div in a duallangimage, we don't need 'luna' */
-    galDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp', 'images/buttons/globe-white-es.webp', document.getElementById('change-language-img')))
+    galDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp',
+        'images/buttons/globe-white-es.webp', $('#change-language-img')))
     loadContentInLang(currentLang);
     loadGallery();
 })
@@ -18,9 +19,9 @@ function applyMainLanguageChange(newlang) {
     /*
         Applies language change to the page's main text, this will be overriden for each page
     */
-
+    var $galleryTitle = $('#page-title');
     document.title = newlang === 'es' ? 'Luna | Medios' : 'Luna | Media';
-    document.getElementById('page-title').innerText = newlang === 'es' ? 'Galería' : 'Gallery';
+    $galleryTitle.html(newlang === 'es' ? 'Galería' : 'Gallery');
     loadContentInLang(newlang)
 }
 
@@ -37,14 +38,14 @@ function loadContentInLang(language) {
 }
 
 function loadGallery() {
-    document.getElementById('gallery-placeholder').remove(); // remove the placeholder "loading gallery" text
+    $('#gallery-placeholder').remove(); // remove the placeholder "loading gallery" text
 
-    let pictures = [ '068A62F9.jpeg', 'P1001442.JPG',  '468D91AF.jpeg', 'P1001211.webp',
+    var pictures = [ '068A62F9.jpeg', 'P1001442.JPG',  '468D91AF.jpeg', 'P1001211.webp',
                              'P1001437.jpg', 'P1001384.jpg', 'P1001197.jpg', 'P1001430.jpg',
                              'P1001262.webp', 'P1001396.jpg', 'P1001427.jpg', 'P1001195.jpg',
                              'P1000427.jpg', 'P1000708.jpg', 'P1001406.webp', 'P1001446.webp' ]
 
-    let galleryDiv = document.getElementById('main-gallery-container');
+    var galleryDiv = $('#main-gallery-container');
     for (let i = 0; i < pictures.length; i++) {
         let imgDiv = document.createElement('div');
         imgDiv.className = 'gallery-container';

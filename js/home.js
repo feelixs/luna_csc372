@@ -5,11 +5,12 @@ $(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
     */
-    homeTextFields.push(new DualLangTextField(`/luna/text/home/div1`, document.getElementById('div1-text')));
-    homeTextFields.push(new DualLangTextField(`/luna/text/home/div2`, document.getElementById('div2-text')));
-    homeTextFields.push(new DualLangTextField(`/luna/text/footer`, document.getElementById('footer-text')));
-    homeTextFields.push(new DualLangTextField( `/luna/text/copyright`, document.getElementById('copyright')));
-    homeDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp', 'images/buttons/globe-white-es.webp', document.getElementById('change-language-img')))
+    homeTextFields.push(new DualLangTextField(`/luna/text/home/div1`, $('#div1-text')));
+    homeTextFields.push(new DualLangTextField(`/luna/text/home/div2`, $('#div2-text')));
+    homeTextFields.push(new DualLangTextField(`/luna/text/footer`, $('#footer-text')));
+    homeTextFields.push(new DualLangTextField( `/luna/text/copyright`, $('#copyright')));
+    homeDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp',
+        'images/buttons/globe-white-es.webp', $('#change-language-img')))
     loadContentInLang(currentLang);
 });
 

@@ -11,9 +11,7 @@ $(document).ready(function () {
     cntTextFields.push(new DualLangTextField( `/luna/text/copyright`, $('#copyright')));
     cntTextFields.push(new DualLangTextField( `/luna/text/contact/desc`, $('#contact-desc')));
     cntDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp',
-                                         'images/buttons/globe-white-es.webp',
-                                                $('#change-language-img')))
-
+        'images/buttons/globe-white-es.webp', $('#change-language-img')))
     loadContentInLang(currentLang);
 })
 
@@ -22,7 +20,6 @@ function applyMainLanguageChange(newlang) {
         Applies language change to the page's main text, this will be overriden for each page
     */
     var $contactTitle = $('#page-title');
-    var $contactDesc = $('#contact-desc');
     var $emailTitle = $('#contact-email-header');
     var $msgTitle = $('#contact-msg-header');
 
