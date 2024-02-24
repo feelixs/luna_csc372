@@ -63,9 +63,9 @@ function DualLangImage(enPath, esPath, element) {
         // (the one that the button will change the webpage to if clicked)
 
         // pass the this.element DOM elm into Jquery
-        $(this.element).fadeOut('slow', function() {
+        $(this.element).fadeOut('fast', () => {
             let newSrc = lang === 'es' ? this.enPath : this.esPath;
-            $(this).attr('src', newSrc).fadeIn('slow');
+            $(this.element).attr('src', newSrc).fadeIn('fast');
         });
 
     }
