@@ -4,9 +4,6 @@ var homeDualImages = []
 $(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
-
-        Tutorial I used for running JS on page load:
-        https://stackoverflow.com/a/25984032
     */
     homeTextFields.push(new DualLangTextField(`/luna/text/home/div1`, document.getElementById('div1-text')));
     homeTextFields.push(new DualLangTextField(`/luna/text/home/div2`, document.getElementById('div2-text')));
@@ -20,7 +17,6 @@ function applyMainLanguageChange(newlang) {
     /*
         Applies language change to the page's main text, this will be overriden for each page
     */
-
     document.title = newlang === 'es' ? 'Luna | Inicio' : 'Luna | Home';
     loadContentInLang(newlang)
 }
