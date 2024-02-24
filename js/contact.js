@@ -1,4 +1,5 @@
 var cntTextFields = []
+var cntDualImages = []
 
 document.addEventListener('DOMContentLoaded', function () {
     /*
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     cntTextFields.push(new DualLangTextField(`/luna/text/home/div2`, document.getElementById('div2-text')));
     cntTextFields.push(new DualLangTextField(`/luna/text/footer`, document.getElementById('footer-text')));
     cntTextFields.push(new DualLangTextField( `/luna/text/copyright`, document.getElementById('copyright')));
-    cntTextFields.push(new DualLangImage('images/buttons/globe-white-en.webp', 'images/buttons/globe-white-es.webp', document.getElementById('change-language-img')))
+    cntDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp', 'images/buttons/globe-white-es.webp', document.getElementById('change-language-img')))
     loadContentInLang(currentLang);
 })
 
@@ -31,7 +32,7 @@ function loadContentInLang(language) {
     for (let i = 0; i < cntTextFields.length; i++) {
         cntTextFields[i].getText(language);
     }
-    for (let i = 0; i < cntTextFields.length; i++) {
-        cntTextFields[i].getImg(language);
+    for (let i = 0; i < cntDualImages.length; i++) {
+        cntDualImages[i].getImg(language);
     }
 }
