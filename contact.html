@@ -24,23 +24,68 @@
             <li><a id="bios-nav" href="bios.html">About</a></li>
             <li><a id="media-nav" href="gallery.html">Media</a></li>
             <li><a id="patreon-nav" href="#">Contact</a></li>
-            <li class="lang-chg trans-17"><button onclick="toggleLanguage()"><img id="change-language-img" alt="Button that changes the page's language" src="images/buttons/globe-white-es.webp"></button></li>
+            <li class="lang-chg trans-17">
+                <button onclick="toggleLanguage()"><img id="change-language-img"
+                                                        alt="Button that changes the page's language"
+                                                        src="images/buttons/globe-white-es.webp"></button>
+            </li>
         </ul>
     </div>
 </nav>
 <main>
-
+    <div class="trans-contained-box page-title-white grey-bg">
+        <div class="main-title-text">
+            <h1 id="page-title">Contact Us</h1>
+        </div>
+        <div class="trans-contained-box black-bg rounded inner-div padding-20" id="form-div">
+            <div class="flex-container">
+                <p>Got a question or just want to say hi? We'd love to hear from you!</p>
+            </div>
+                <form action="https://formspree.io/f/mnqevjdk" method="POST">
+                    <label>
+                        <div class="flex-container-start margin-left-small">
+                            Your email:
+                        </div>
+                        <div class="flex-container">
+                            <input type="email" name="email">
+                        </div>
+                    </label>
+                    <span class="blank-space"></span>
+                    <label>
+                        <div class="flex-container-start margin-left-small">
+                            Your message:
+                        </div>
+                        <div class="flex-container">
+                            <textarea name="message"></textarea>
+                        </div>
+                    </label><br>
+                    <div class="flex-container">
+                        <button id="submit-btn" class="half-rounded" type="submit">Send</button>
+                    </div>
+                </form>
+        </div>
+    </div>
 </main>
 
 <footer>
     <div class="flex-container">
         <div class="trans-contained-box" id="copyright">
-            Copyright &copy; 2024, All Rights Reserved Trio Luna and <a target="_blank" href="https://felixcreations.com"><img alt="Felixcreations Logo" class="img-logo trans-30" src="images/logos/felix-logo-black.webp"></a>
+            Copyright &copy; 2024, All Rights Reserved Trio Luna and <a target="_blank"
+                                                                        href="https://felixcreations.com"><img
+                alt="Felixcreations Logo" class="img-logo trans-30" src="images/logos/felix-logo-black.webp"></a>
         </div>
     </div>
     <div class="flex-container" style="padding-bottom: 20px" id="footer-text">
-        If you have any questions or concerns, please contact Michael Felix through <a class="email-link" target="_blank" href="mailto:mikemh@uri.edu">mikemh@uri.edu</a>
+        If you have any questions or concerns, please contact Michael Felix through <a class="email-link"
+                                                                                       target="_blank"
+                                                                                       href="mailto:mikemh@uri.edu">mikemh@uri.edu</a>
     </div>
 </footer>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<!-- if we fail to load from the CDN, use our local download of jquery -->
+<script>window.jQuery || document.write('<script src="js/jquery-3-7-1.js"><\/script>')</script>
+
 </body>
 </html>
