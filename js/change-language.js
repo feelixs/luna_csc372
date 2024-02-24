@@ -1,6 +1,5 @@
 var currentLang = 'en';
 
-
 function toggleLanguage() {
     /*
        Swaps between Spanish and English, and update the page's text to the new lang
@@ -15,7 +14,6 @@ function toggleLanguage() {
     applyNavLanguageChange(currentLang);
     applyMainLanguageChange(currentLang)
 }
-
 
 function applyNavLanguageChange(newLang) {
     /*
