@@ -1,7 +1,7 @@
 var biosTextFields = []
 var bioDualImages = []
 
-$(document).ready( function () {
+$(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
 
@@ -15,7 +15,7 @@ $(document).ready( function () {
     biosTextFields.push(new DualLangTextField( `/luna/text/copyright`, document.getElementById('copyright')));
     bioDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp', 'images/buttons/globe-white-es.webp', document.getElementById('change-language-img')))
     loadContentInLang(currentLang);
-})
+});
 
 function applyMainLanguageChange(newlang) {
     /*
