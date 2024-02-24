@@ -29,9 +29,7 @@
             <li><a id="media-nav" href="gallery.html">Media</a></li>
             <li><a id="patreon-nav" href="#">Contact</a></li>
             <li class="lang-chg trans-17">
-                <button onclick="toggleLanguage()"><img id="change-language-img"
-                                                        alt="Button that changes the page's language"
-                                                        src="images/buttons/globe-white-es.webp"></button>
+                <button onclick="toggleLanguage()"><img id="change-language-img" alt="Button that changes the page's language" src="images/buttons/globe-white-es.webp"></button>
             </li>
         </ul>
     </div>
@@ -43,22 +41,18 @@
         </div>
         <div class="trans-contained-box black-bg rounded inner-div padding-20" id="form-div">
             <div class="flex-container">
-                <p>Got a question or just want to say hi? We'd love to hear from you!</p>
+                <p id="contact-desc">Got a question or just want to say hi? We'd love to hear from you!</p>
             </div>
                 <form action="https://formspree.io/f/mnqevjdk" method="POST">
                     <label>
-                        <div class="flex-container-start margin-left-small">
-                            Your email:
-                        </div>
+                        <div class="flex-container-start margin-left-small" id="contact-email-header">Your email:</div>
                         <div class="flex-container">
                             <input type="email" name="email">
                         </div>
                     </label>
                     <span class="blank-space"></span>
                     <label>
-                        <div class="flex-container-start margin-left-small">
-                            Your message:
-                        </div>
+                        <div class="flex-container-start margin-left-small" id="contact-msg-header">Your message:</div>
                         <div class="flex-container">
                             <textarea name="message"></textarea>
                         </div>
