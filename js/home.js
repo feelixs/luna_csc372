@@ -1,7 +1,7 @@
 var homeTextFields = []
 var homeDualImages = []
 
-document.addEventListener('DOMContentLoaded', function () {
+$(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
 

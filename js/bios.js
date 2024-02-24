@@ -1,6 +1,7 @@
 var biosTextFields = []
 var bioDualImages = []
-document.addEventListener('DOMContentLoaded', function () {
+
+$(document).ready( function () {
     /*
         Load this page's content in the default language when the page loads.
 
@@ -21,7 +22,8 @@ function applyMainLanguageChange(newlang) {
         Applies language change to the page's main text, this will be overriden for each page
     */
     document.title = newlang === 'es' ? 'Luna | Sobre' : 'Luna | About';
-    document.getElementById('page-title').innerText = newlang === 'es' ? 'Conoce al Trío' : 'Meet the Trio';
+    var $biosTitle = $('page-title');
+    $biosTitle.html(newlang === 'es' ? 'Conoce al Trío' : 'Meet the Trio');
     loadContentInLang(newlang);
 }
 
