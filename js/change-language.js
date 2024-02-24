@@ -62,8 +62,11 @@ function DualLangImage(enPath, esPath, element) {
         // should display the opposite language of the current one
         // (the one that the button will change the webpage to if clicked)
 
+        this.element.fadeOut('slow', () => {
+            this.element.src = lang === 'es' ? this.enPath : this.esPath;
+            this.element.fadeIn('slow')
+        });
 
-        this.element.src = lang === 'es' ? this.enPath : this.esPath;
     }
     return this
 }
