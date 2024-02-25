@@ -45,18 +45,13 @@ function loadGallery() {
                              'P1001262.webp', 'P1001396.jpg', 'P1001427.jpg', 'P1001195.jpg',
                              'P1000427.jpg', 'P1000708.jpg', 'P1001406.webp', 'P1001446.webp' ]
 
-    var galleryDiv = $('#main-gallery-container');
-    for (let i = 0; i < pictures.length; i++) {
-        let imgDiv = document.createElement('div');
-        imgDiv.className = 'gallery-container';
-        let img = document.createElement('img');
-        img.className = 'gallery-img rounded';
-        img.src = `images/gallery/imgs/${pictures[i]}`;
-        setAltToFile(img, `${trimFilename(pictures[i])}.txt`); // dynamically det the img's alt
-
-        imgDiv.appendChild(img); // put the image inside its div
-        galleryDiv.appendChild(imgDiv); // put the div inside the gallery
-    }
+    var $galleryDiv = $('#main-gallery-container');
+    pictures.forEach(function () {
+        let $tempDiv = $('<div>').attr('class', 'gallery-container');
+        let $tempImg = $('<img>').attr('class', 'gallery-img rounded').attr('src', `images/gallery/imgs/${this}`);
+        $galleryDiv.append($tempDiv).append($tempImg);
+        setAltToFile($tempImg, `${trimFilename(this)}.txt`);
+    })
 }
 
 function trimFilename(filename) {
