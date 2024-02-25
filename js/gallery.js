@@ -49,7 +49,8 @@ function loadGallery() {
     pictures.forEach(function (picFilename) {
         let $tempDiv = $('<div>').attr('class', 'gallery-container');
         let $tempImg = $('<img>').attr('class', 'gallery-img rounded').attr('src', `images/gallery/imgs/${picFilename}`);
-        $galleryDiv.append($tempDiv).append($tempImg);
+        $tempDiv.append($tempImg);
+        $galleryDiv.append($tempDiv);
         setAltToFile($tempImg, `${trimFilename(picFilename)}.txt`);
     })
 }
