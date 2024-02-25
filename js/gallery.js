@@ -46,11 +46,11 @@ function loadGallery() {
                              'P1000427.jpg', 'P1000708.jpg', 'P1001406.webp', 'P1001446.webp' ]
 
     var $galleryDiv = $('#main-gallery-container');
-    pictures.forEach(function () {
+    pictures.forEach(function (picFilename) {
         let $tempDiv = $('<div>').attr('class', 'gallery-container');
-        let $tempImg = $('<img>').attr('class', 'gallery-img rounded').attr('src', `images/gallery/imgs/${this}`);
+        let $tempImg = $('<img>').attr('class', 'gallery-img rounded').attr('src', `images/gallery/imgs/${picFilename}`);
         $galleryDiv.append($tempDiv).append($tempImg);
-        setAltToFile($tempImg, `${trimFilename(this)}.txt`);
+        setAltToFile($tempImg, `${trimFilename(picFilename)}.txt`);
     })
 }
 
