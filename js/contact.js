@@ -26,8 +26,8 @@ function applyMainLanguageChange(newlang) {
     // update page title, nav text, and various titles across the page
     document.title = newlang === 'es' ? 'Luna | Contacto' : 'Luna | Contact';
     $contactTitle.html(newlang === 'es' ? 'Contacto' : 'Contact Us');
-    $emailTitle.html(newlang === 'es' ? 'Tu correo electrónico' : 'Your Email:');
-    $msgTitle.html(newlang === 'es' ? 'Tu Mensaje' : 'Your Message:');
+    $emailTitle.html(newlang === 'es' ? 'Tu correo electrónico:' : 'Your Email:');
+    $msgTitle.html(newlang === 'es' ? 'Tu Mensaje:' : 'Your Message:');
     loadContentInLang(newlang)
 }
 
