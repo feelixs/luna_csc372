@@ -41,9 +41,9 @@ function loadGallery() {
     $('#gallery-placeholder').remove(); // remove the placeholder "loading gallery" text
 
     var pictures = [ '068A62F9.webp', 'P1001442.webp',  '468D91AF.webp', 'P1001211.webp',
-                             'P1001437.jpg', 'P1001384.jpg', 'P1001197.jpg', 'P1001430.jpg',
-                             'P1001262.webp', 'P1001396.jpg', 'P1001427.jpg', 'P1001195.jpg',
-                             'P1000427.jpg', 'P1000708.jpg', 'P1001406.webp', 'P1001446.webp' ]
+                             'P1001437.webp', 'P1001384.webp', 'P1001197.webp', 'P1001430.webp',
+                             'P1001262.webp', 'P1001396.webp', 'P1001427.webp', 'P1001195.webp',
+                             'P1000427.webp', 'P1000708.webp', 'P1001406.webp', 'P1001446.webp' ]
 
     var $galleryDiv = $('#main-gallery-container');
     pictures.forEach(function (picFilename) {
