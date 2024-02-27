@@ -40,7 +40,7 @@ function loadContentInLang(language) {
 function loadGallery() {
     $('#gallery-placeholder').remove(); // remove the placeholder "loading gallery" text
 
-    var pictures = [ '068A62F9.jpeg', 'P1001442.JPG',  '468D91AF.jpeg', 'P1001211.webp',
+    var pictures = [ '068A62F9.webp', 'P1001442.JPG',  '468D91AF.jpeg', 'P1001211.webp',
                              'P1001437.jpg', 'P1001384.jpg', 'P1001197.jpg', 'P1001430.jpg',
                              'P1001262.webp', 'P1001396.jpg', 'P1001427.jpg', 'P1001195.jpg',
                              'P1000427.jpg', 'P1000708.jpg', 'P1001406.webp', 'P1001446.webp' ]
