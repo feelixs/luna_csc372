@@ -10,8 +10,8 @@ $(document).ready(function () {
     homeTextFields.push(new XMLDualLangTextField(`/data/xml/home.xml`, 2, $('#patreon-text')));
     homeTextFields.push(new HTMLDualLangTextField(`/data/html/footer`, $('#footer-text')));
     homeTextFields.push(new HTMLDualLangTextField( `/data/html/copyright`, $('#copyright')));
-    homeDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
-        'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
+    homeDualImages.push(new DualLangImage('/images/buttons/globe-white-en.webp',
+        '/images/buttons/globe-white-es.webp', $('#change-language-img')))
 
     // load the current langague from the document's 'lang' attribute, which was set by the server (django)
     var currentLang = $('html').attr('lang');

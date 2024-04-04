@@ -8,8 +8,8 @@ $(document).ready(function () {
     cntTextFields.push(new XMLDualLangTextField(`/data/xml/contact.xml`, 0, $('#contact-desc')));
     cntTextFields.push(new HTMLDualLangTextField(`/data/html/footer`, $('#footer-text')));
     cntTextFields.push(new HTMLDualLangTextField( `/data/html/copyright`, $('#copyright')));
-    cntDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
-        'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
+    cntDualImages.push(new DualLangImage('/images/buttons/globe-white-en.webp',
+        '/images/buttons/globe-white-es.webp', $('#change-language-img')))
 
     // load the current langague from the document's 'lang' attribute, which was set by the server (django)
     var currentLang = $('html').attr('lang');
