@@ -16,8 +16,7 @@ $(document).ready(function () {
     var currentLang = $('html').attr('lang');
     console.log(`Loading the user's current language as ${currentLang}`);
     loadContentInLang(currentLang);
-    loadGallery("data/json/gallery.json");
-})
+});
 
 function applyMainLanguageChange(newlang) {
     /*
@@ -43,29 +42,4 @@ function loadContentInLang(language) {
     for (let i = 0; i < galDualImages.length; i++) {
         galDualImages[i].getImg(language);
     }
-}
-
-function loadGallery(jsonFile) {
-    /*
-        Loads pictures with paths provided by `jsonFile` into the page's main gallery
-     */
-    $('#gallery-placeholder').remove(); // remove the placeholder "loading gallery" text
-
-    var galleryXHR = new XMLHttpRequest();
-    galleryXHR.onload = function () {
-        var $galleryDiv = $('#main-gallery-container');
-        if (galleryXHR.status === 200) {
-            let jsonContents = JSON.parse(galleryXHR.responseText);
-            jsonContents.pictures.forEach( function(thisPic) {
-                // thisPic is the current index of jsonContents (the current picture from the list in the json)
-                let $tempDiv = $('<div>').attr('class', 'gallery-container');
-                let $tempImg = $('<img>').attr('class', 'gallery-img rounded').attr('src', thisPic.url);
-                $tempImg.attr('alt', thisPic.alt);
-                $tempDiv.append($tempImg);
-                $galleryDiv.append($tempDiv);
-            });
-        }
-    }
-    galleryXHR.open('GET', jsonFile, true);
-    galleryXHR.send(null);
 }

@@ -87,5 +87,6 @@ $galleryHtml = loadGallery('data/json/gallery.json');
 </footer>
 
 <script src="js/change-language.js"></script>
+<script src="js/gallery-lang.js"></script>
 </body>
 </html>
