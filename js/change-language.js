@@ -67,7 +67,7 @@ function HTMLDualLangTextField(baseDir, element) {
                 throw new Error(`${thisObj.xmlFile} - error fetching file`);
             }
         }
-        xhr.open('GET', `https://trioluna.com${this.baseDir}/${lang}.html`, true);
+        xhr.open('GET', `${this.baseDir}/${lang}.html`, true);
         xhr.send(null);
     }
     return this
