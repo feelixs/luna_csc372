@@ -5,11 +5,11 @@ $(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
     */
-    biosTextFields.push(new XMLDualLangTextField(`/static/data/xml/bios.xml`, 0, $('#carmen-bio'), '&ensp;&ensp;&ensp;&ensp;'));
-    biosTextFields.push(new XMLDualLangTextField(`/static/data/xml/bios.xml`, 1, $('#marco-bio'), '&ensp;&ensp;&ensp;&ensp;'));
-    biosTextFields.push(new XMLDualLangTextField(`/static/data/xml/bios.xml`, 2, $('#nicolas-bio'), '&ensp;&ensp;&ensp;&ensp;'));
-    biosTextFields.push(new HTMLDualLangTextField(`/static/data/html/footer`, $('#footer-text')));
-    biosTextFields.push(new HTMLDualLangTextField( `/static/data/html/copyright`, $('#copyright')));
+    biosTextFields.push(new XMLDualLangTextField(`/data/xml/bios.xml`, 0, $('#carmen-bio'), '&ensp;&ensp;&ensp;&ensp;'));
+    biosTextFields.push(new XMLDualLangTextField(`/data/xml/bios.xml`, 1, $('#marco-bio'), '&ensp;&ensp;&ensp;&ensp;'));
+    biosTextFields.push(new XMLDualLangTextField(`/data/xml/bios.xml`, 2, $('#nicolas-bio'), '&ensp;&ensp;&ensp;&ensp;'));
+    biosTextFields.push(new HTMLDualLangTextField(`/data/html/footer`, $('#footer-text')));
+    biosTextFields.push(new HTMLDualLangTextField( `/data/html/copyright`, $('#copyright')));
     bioDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
         'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
 
