@@ -1,34 +1,39 @@
 var biosTextFields = []
 var bioDualImages = []
-document.addEventListener('DOMContentLoaded', function () {
+
+$(document).ready(function () {
     /*
         Load this page's content in the default language when the page loads.
-
-        Tutorial I used for running JS on page load:
-        https://stackoverflow.com/a/25984032
     */
-    biosTextFields.push(new DualLangTextField(`/luna/text/bios/carmen`, document.getElementById('carmen-bio')));
-    biosTextFields.push(new DualLangTextField(`/luna/text/bios/marco`, document.getElementById('marco-bio')));
-    biosTextFields.push(new DualLangTextField(`/luna/text/bios/nicolas`, document.getElementById('nicolas-bio')));
-    biosTextFields.push(new DualLangTextField(`/luna/text/footer`, document.getElementById('footer-text')));
-    biosTextFields.push(new DualLangTextField( `/luna/text/copyright`, document.getElementById('copyright')));
-    bioDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp', 'images/buttons/globe-white-es.webp', document.getElementById('change-language-img')))
+    biosTextFields.push(new XMLDualLangTextField(`/static/data/xml/bios.xml`, 0, $('#carmen-bio'), '&ensp;&ensp;&ensp;&ensp;'));
+    biosTextFields.push(new XMLDualLangTextField(`/static/data/xml/bios.xml`, 1, $('#marco-bio'), '&ensp;&ensp;&ensp;&ensp;'));
+    biosTextFields.push(new XMLDualLangTextField(`/static/data/xml/bios.xml`, 2, $('#nicolas-bio'), '&ensp;&ensp;&ensp;&ensp;'));
+    biosTextFields.push(new HTMLDualLangTextField(`/static/data/html/footer`, $('#footer-text')));
+    biosTextFields.push(new HTMLDualLangTextField( `/static/data/html/copyright`, $('#copyright')));
+    bioDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
+        'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
+
+    // load the current langague from the document's 'lang' attribute, which was set by the server (django)
+    var currentLang = $('html').attr('lang');
+    console.log(`Loading the user's current language as ${currentLang}`);
     loadContentInLang(currentLang);
-})
+});
 
 function applyMainLanguageChange(newlang) {
     /*
         Applies language change to the page's main text, this will be overriden for each page
     */
     document.title = newlang === 'es' ? 'Luna | Sobre' : 'Luna | About';
-    document.getElementById('page-title').innerText = newlang === 'es' ? 'Conoce al Trío' : 'Meet the Trio';
-    loadContentInLang(newlang);
+    var $biosTitle = $('#page-title');
+    $biosTitle.html(newlang === 'es' ? 'Conoce al Trío' : 'Meet the Trio');
 }
 
 function loadContentInLang(language) {
     /*
         This is run when the page initially loads, and whenever the language is changed.
     */
+    applyMainLanguageChange(language);
+    applyNavLanguageChange(language);
     for (let i = 0; i < biosTextFields.length; i++) {
         biosTextFields[i].getText(language);
     }
