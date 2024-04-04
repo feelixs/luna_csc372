@@ -16,7 +16,7 @@ $(document).ready(function () {
     var currentLang = $('html').attr('lang');
     console.log(`Loading the user's current language as ${currentLang}`);
     loadContentInLang(currentLang);
-    loadGallery("https://trioluna.com/static/data/json/gallery.json");
+    loadGallery("data/json/gallery.json");
 })
 
 function applyMainLanguageChange(newlang) {
