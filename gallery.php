@@ -68,7 +68,9 @@ $galleryHtml = loadGallery('data/json/gallery.json');
 
         <div class="main-title-text"><h1 id="gallery-title">Gallery</h1></div>
         <div class="black-bg rounded inner-div">
-            <?= $galleryHtml ?>
+            <div class="gallery-box" id="main-gallery-container">
+                <?= $galleryHtml ?>
+            </div>
         </div>
     </div>
 </main>
