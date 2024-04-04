@@ -1,5 +1,5 @@
 <?php
-class GalleryImage {
+class ImageGallery {
     public $url;
     public $alt;
 
@@ -18,7 +18,7 @@ function loadGallery($filepath) {
     $imagesData = json_decode($jsonData, true); // load the json as a key-value array
     $parsedHTML = '';
     foreach ($imagesData['pictures'] as $picture) {
-        $image = new GalleryImage($picture['url'], $picture['alt']);
+        $image = new ImageGallery($picture['url'], $picture['alt']);
         $parsedHTML .= "\n" . $image->toHTML();
     }
     return $parsedHTML;
