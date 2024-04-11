@@ -1,7 +1,6 @@
 var cntTextFields = []
 var cntDualImages = []
-var $langForm = $('#language-form');
-var $langInput = $('#language-input');
+var $langbtn = $('#language-form');
 
 $(document).ready(function () {
     /*
@@ -19,20 +18,15 @@ $(document).ready(function () {
     loadContentInLang(currentLang);
 })
 
-
-$langForm.on('submit', function(e) {
-    e.preventDefault(); // Prevent form from submitting immediately
-
-    let oldLang = $('html').attr('lang'); // Get the current language from the HTML lang attribute
-
-    // Determine the new language based on the old one
-    let newLang = (oldLang === 'en') ? 'es' : 'en';
-
-    // Set the new language in the hidden input
-    $langInput.val(newLang);
-
-    // Now submit the form programmatically since we've prevented the default submit action
-    this.submit(); // `this` refers to the form element in this context
+$langbtn.on('submit', function(e) {
+    let oldLang = $('html').attr('lang'); // get the current language (the actual currentLang var might be out of date)
+    if (oldLang === 'en') {
+        currentLang = 'es';
+    } else if (oldLang === 'es') {
+        currentLang = 'en';
+    }
+    e.preventDefault();
+    $langbtn.val(currentLang);
 });
 
 function applyMainLanguageChange(newlang) {
