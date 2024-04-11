@@ -42,7 +42,8 @@ function toggleLanguage() {
     /*
        Swaps between Spanish and English, and update the page's text to the new lang
     */
-    let oldLang = $('html').attr('lang'); // get the current language (the actual currentLang var might be out of date)
+
+    let oldLang = getCookie('language'); // get the current language (the actual currentLang var might be out of date)
     if (oldLang === 'en') {
         currentLang = 'es';
     } else if (oldLang === 'es') {
