@@ -7,4 +7,9 @@ function getLanguageCookie() {
     return $_COOKIE["language"];
 }
 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    setLanguageCooke($_POST["language"]);
+}
+
 ?>
