@@ -1,6 +1,6 @@
 <?php
 
-$name = "Michae Felix!!"
+
 
 ?>
 
@@ -66,7 +66,6 @@ $name = "Michae Felix!!"
                     </div>
                 </form>
         </div>
-        <p><?= $name ?></p>
     </div>
 </main>
 
