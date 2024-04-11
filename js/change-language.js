@@ -33,7 +33,6 @@ $langForm.on('submit', function(e) {
         currentLang = 'en';
     }
 
-    $('html').attr('lang', currentLang); // update the page's lang attribute
     $langInput.val(currentLang);
     this.submit();
 });
