@@ -9,9 +9,11 @@
     <link rel="stylesheet" type="text/css" href="css/flex-boxes.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/bios.css">
-    <script src="js/change-language.js?v=2.5"></script>
-    <script src="js/bios.js?v=2.2"></script>
     <title>Luna | About</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- if we fail to load from the CDN, use our local download of jquery -->
+    <script>window.jQuery || document.write('<script src="https://trioluna.com/static/js/jquery-3-7-1.js"><\/script>')</script>
 </head>
 <body>
 <nav class="navbar" id="navbar">
@@ -22,8 +24,8 @@
         <ul class="nav-links">
             <li><a id="home-nav" class="only-desktop" href="/">Home</a></li>
             <li><a id="bios-nav" href="#">About</a></li>
-            <li><a id="media-nav" href="gallery.html">Media</a></li>
-            <li><a id="patreon-nav" target="_blank" href="https://patreon.com">Patreon</a></li>
+            <li><a id="media-nav" href="gallery.php">Media</a></li>
+            <li><a id="patreon-nav" href="contact.html">Contact</a></li>
             <li class="lang-chg trans-17">
                 <button onclick="toggleLanguage()"><img id="change-language-img" alt="Button that changes the page's language" src="images/buttons/globe-white-es.webp"></button>
             </li>
@@ -56,7 +58,7 @@
             <div class="flex-container-bio" id="marco">
                 <div class="info-contained-box">
                     <p class="info-title">Marco Spíndola</p>
-                    <p class="info-text" id="marco-bio">&ensp;&ensp;&ensp;&ensp;Marco Spíndola is a versatile Mexican artist, photographer, theater director, and guitarist. With over 30 years of experience as an educator, Marco has been a source of inspiration for individuals of all ages - from children to the elderly - in the fields of music, theater, and performing arts. Marco's extensive career in education includes teaching at various schools in Mexico, Costa Rica, Canada, and the United States.</p>
+                    <p class="info-text" id="marco-bio">&ensp;&ensp;&ensp;&ensp;Marco Spíndola is a versatile Mexican artist, photographer, scene director, and guitarist. With over 30 years of experience as an educator, Marco has been a source of inspiration for individuals of all ages - from children to the elderly - in the fields of music, theater, and performing arts. Marco's extensive career in education includes teaching at various schools in Mexico, Costa Rica, Canada, and the United States.</p>
                 </div>
                 <div class="info-contained-box bio-img-container">
                     <img class="bio-img rounded" src="images/desktop/P1001427-cropped.webp" alt="Portrait of Marco Spíndola">
@@ -69,12 +71,15 @@
 <footer>
     <div class="flex-container">
         <div class="trans-contained-box" id="copyright">
-            Copyright &copy; 2024, All Rights Reserved Trio Luna and <a target="_blank" href="https://felixcreations.com"><img alt="Felixcreations Logo" class="img-logo trans-30" src="images/logos/felix-logo-black.webp"></a>
+            Copyright &copy; 2024, All Rights Reserved Trio Luna and <a target="_blank" href="https://felixcreations.com"><img alt="Felixcreations Logo" class="img-logo trans-30" src="images/logos/felix-logo-white.webp"></a>
         </div>
     </div>
     <div class="flex-container" style="padding-bottom: 20px" id="footer-text">
         If you have any questions or concerns, please contact Michael Felix through <a class="email-link" target="_blank" href="mailto:mikemh@uri.edu">mikemh@uri.edu</a>
     </div>
 </footer>
+
+<script src="js/change-language.js"></script>
+<script src="js/bios.js"></script>
 </body>
 </html>

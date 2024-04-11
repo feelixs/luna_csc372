@@ -9,9 +9,11 @@
     <link rel="stylesheet" type="text/css" href="css/flex-boxes.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/gallery.css">
-    <script src="js/change-language.js"></script>
-    <script src="js/gallery.js?v=1"></script>
     <title>Luna | Media</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- if we fail to load from the CDN, use our local download of jquery -->
+    <script>window.jQuery || document.write('<script src="https://trioluna.com/static/js/jquery-3-7-1.js"><\/script>')</script>
 </head>
 <body>
 <nav class="navbar" id="navbar">
@@ -23,14 +25,19 @@
             <li><a id="home-nav" class="only-desktop" href="/">Home</a></li>
             <li><a id="bios-nav" href="bios.html">About</a></li>
             <li><a id="media-nav" href="#">Media</a></li>
-            <li><a id="patreon-nav" target="_blank" href="https://patreon.com">Patreon</a></li>
+            <li><a id="patreon-nav" href="contact.html">Contact</a></li>
             <li class="lang-chg trans-17"><button onclick="toggleLanguage()"><img id="change-language-img" alt="Button that changes the page's language" src="images/buttons/globe-white-es.webp"></button></li>
         </ul>
     </div>
 </nav>
 <main>
     <div class="trans-contained-box page-title-white grey-bg">
-        <div class="main-title-text"><h1 id="page-title">Gallery</h1></div>
+        <div class="main-title-text"><h1 id="page-title">Media</h1></div>
+        <div class="videoWrapper">
+            <iframe allowfullscreen src="https://www.youtube.com/embed/Ua5sYoeHdfo"></iframe>
+        </div>
+
+        <div class="main-title-text"><h1 id="gallery-title">Gallery</h1></div>
         <div class="black-bg rounded inner-div">
             <div class="gallery-box" id="main-gallery-container">
                 <div id="gallery-placeholder"><p>Loading gallery...</p></div>
@@ -42,12 +49,16 @@
 <footer>
     <div class="flex-container">
         <div class="trans-contained-box" id="copyright">
-            Copyright &copy; 2024, All Rights Reserved Trio Luna and <a target="_blank" href="https://felixcreations.com"><img alt="Felixcreations Logo" class="img-logo trans-30" src="images/logos/felix-logo-black.webp"></a>
+            Copyright &copy; 2024, All Rights Reserved Trio Luna and <a target="_blank" href="https://felixcreations.com"><img alt="Felixcreations Logo" class="img-logo trans-30" src="images/logos/felix-logo-white.webp"></a>
         </div>
     </div>
     <div class="flex-container" style="padding-bottom: 20px" id="footer-text">
         If you have any questions or concerns, please contact Michael Felix through <a class="email-link" target="_blank" href="mailto:mikemh@uri.edu">mikemh@uri.edu</a>
     </div>
 </footer>
+
+<script src="js/change-language.js"></script>
+<script src="js/gallery-lang.js"></script>
+<script src="js/gallery-images.js"></script>
 </body>
 </html>
