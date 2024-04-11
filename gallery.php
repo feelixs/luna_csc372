@@ -54,7 +54,7 @@ $galleryHtml = loadGallery('data/json/gallery.json');
             <li><a id="home-nav" class="only-desktop" href="/">Home</a></li>
             <li><a id="bios-nav" href="bios.html">About</a></li>
             <li><a id="media-nav" href="#">Media</a></li>
-            <li><a id="patreon-nav" href="contact.html">Contact</a></li>
+            <li><a id="patreon-nav" href="contact.php">Contact</a></li>
             <li class="lang-chg trans-17"><button onclick="toggleLanguage()"><img id="change-language-img" alt="Button that changes the page's language" src="images/buttons/globe-white-es.webp"></button></li>
         </ul>
     </div>
