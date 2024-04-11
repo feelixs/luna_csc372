@@ -1,3 +1,9 @@
+<?php
+
+$name = "Michae Felix!!"
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -71,7 +77,7 @@
         </div>
     </div>
     <div class="flex-container" style="padding-bottom: 20px" id="footer-text">
-        If you have any questions or concerns, please contact Michael Felix through <a class="email-link"
+        If you have any questions or concerns, please contact <?= $name ?> through <a class="email-link"
                                                                                        target="_blank"
                                                                                        href="mailto:mikemh@uri.edu">mikemh@uri.edu</a>
     </div>
