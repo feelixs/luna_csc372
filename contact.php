@@ -28,7 +28,7 @@
             <a href="/"><img alt="Trio Luna Logo" class="img-logo trans-17" src="images/logos/luna-logo.webp"></a>
         </div>
         <ul class="nav-links">
-            <li><a id="home-nav" class="only-desktop" href="index.php">Home</a></li>
+            <li><a id="home-nav" class="only-desktop" href="/">Home</a></li>
             <li><a id="bios-nav" href="bios.php">About</a></li>
             <li><a id="media-nav" href="gallery.php">Media</a></li>
             <li><a id="patreon-nav" href="#">Contact</a></li>
