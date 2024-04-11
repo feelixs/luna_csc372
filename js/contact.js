@@ -11,8 +11,6 @@ $(document).ready(function () {
     cntDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp',
         'images/buttons/globe-white-es.webp', $('#change-language-img')))
 
-    // load the current langague from the document's 'lang' attribute, which was set by the server (django)
-    var currentLang = getCookie('language');
     console.log(`Loading the user's current language as ${currentLang}`);
     loadContentInLang(currentLang);
 })
