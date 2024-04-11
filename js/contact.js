@@ -18,7 +18,7 @@ $(document).ready(function () {
     loadContentInLang(currentLang);
 })
 
-$langbtn.on('click', function(e) {
+$langbtn.on('submit', function(e) {
     let oldLang = $('html').attr('lang'); // get the current language (the actual currentLang var might be out of date)
     if (oldLang === 'en') {
         currentLang = 'es';
@@ -26,8 +26,7 @@ $langbtn.on('click', function(e) {
         currentLang = 'en';
     }
     e.preventDefault();
-    $langbtn.attr('value', currentLang);
-    $langbtn.submit();
+    $langbtn.val(currentLang);
 });
 
 function applyMainLanguageChange(newlang) {
