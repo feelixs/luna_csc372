@@ -33,7 +33,12 @@
             <li><a id="bios-nav" href="bios.php">About</a></li>
             <li><a id="media-nav" href="gallery.php">Media</a></li>
             <li><a id="patreon-nav" href="contact.php">Contact</a></li>
-            <li class="lang-chg trans-17"><button onclick="toggleLanguage()"><img id="change-language-img" alt="Button that changes the page's language" src="images/buttons/globe-white-es.webp"></button></li>
+            <li class="lang-chg trans-17">
+                <form id="language-form" action="contact.php" method="POST">
+                    <input type="hidden" name="language" id="language-input">
+                    <button type="submit"><img id="change-language-img" alt="Button that changes the page's language" src="images/buttons/globe-white-es.webp"></button>
+                </form>
+            </li>
         </ul>
     </div>
 </nav>
