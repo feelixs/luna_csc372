@@ -4,6 +4,10 @@ var currentLang = getCookie('language') || 'en'; // default to english if no coo
 var $langForm = $('#language-form');
 var $langInput = $('#language-input');
 
+$(document).ready(function () {
+   $('html').attr('lang', currentLang); // set the html lang attribute to the current language
+});
+
 function getCookie(cname) {
     // from https://www.w3schools.com/js/js_cookies.asp
   let name = cname + "=";
