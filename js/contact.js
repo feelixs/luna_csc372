@@ -1,5 +1,6 @@
 var cntTextFields = []
 var cntDualImages = []
+var $langbtn = $('#language-form');
 
 $(document).ready(function () {
     /*
@@ -16,6 +17,17 @@ $(document).ready(function () {
     console.log(`Loading the user's current language as ${currentLang}`);
     loadContentInLang(currentLang);
 })
+
+$langbtn.on('click', function() {
+    let oldLang = $('html').attr('lang'); // get the current language (the actual currentLang var might be out of date)
+    if (oldLang === 'en') {
+        currentLang = 'es';
+    } else if (oldLang === 'es') {
+        currentLang = 'en';
+    }
+    $langbtn.attr('value', currentLang);
+    $langbtn.submit();
+});
 
 function applyMainLanguageChange(newlang) {
     /*

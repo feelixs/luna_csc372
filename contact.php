@@ -1,11 +1,12 @@
 <?php
 
+include 'php_include/language.php';
 
 
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="<?= getLanguageCookie() ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +34,10 @@
             <li><a id="media-nav" href="gallery.php">Media</a></li>
             <li><a id="patreon-nav" href="#">Contact</a></li>
             <li class="lang-chg trans-17">
-                <button onclick="toggleLanguage()"><img id="change-language-img" alt="Button that changes the page's language" src="images/buttons/globe-white-es.webp"></button>
+                <form id="language-form" action="setLanguageCooke()" method="POST">
+                    <input type="hidden" name="language" id="language-input">
+                    <button type="submit"><img id="change-language-img" alt="Button that changes the page's language" src="images/buttons/globe-white-es.webp"></button>
+                </form>
             </li>
         </ul>
     </div>
