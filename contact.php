@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </span>
                     </label><br>
                     <div class="flex-container">
-                        <button id="submit-btn" class="half-rounded" type="submit">Send</button>
+                        <button id="submit-btn" class="half-rounded submit" type="submit">Send</button>
                     </div>
                 </form>
         </div>
