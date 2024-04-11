@@ -16,7 +16,7 @@ input[type=email], textarea {
     margin-left: 2vw;
 }
 
-button[type=submit] {
+button[type=submit].submit {
     background-image: linear-gradient(168deg, #ff424d, #ffab00);
     font-size: 1.1em;
     color: white;
@@ -25,7 +25,7 @@ button[type=submit] {
     cursor: pointer;
 }
 
-button[type=submit]:hover {
+button[type=submit].submit:hover {
     background-image: linear-gradient(168deg, #ec3d47, #ec9f00);
 }
 
