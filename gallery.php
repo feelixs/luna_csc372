@@ -1,4 +1,9 @@
 <?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    setcookie("language", $_POST["language"], time() + (24 * 60 * 60 * 30), "/"); // 30 days
+}
+
 class GalleryImage {
     public $url;
     public $alt;
@@ -56,7 +61,7 @@ $galleryHtml = loadGallery('data/json/gallery.json');
             <li><a id="media-nav" href="#">Media</a></li>
             <li><a id="patreon-nav" href="contact.php">Contact</a></li>
             <li class="lang-chg trans-17">
-                <form id="language-form" action="contact.php" method="POST">
+                <form id="language-form" action="gallery.php" method="POST">
                     <input type="hidden" name="language" id="language-input">
                     <button type="submit"><img id="change-language-img" alt="Button that changes the page's language" src="images/buttons/globe-white-es.webp"></button>
                 </form>
