@@ -1,19 +1,25 @@
 <?php
 
+session_start();
+$language = $_COOKIE['language'] ?? 'en';
+$msg = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_POST["req"] == "LANG") { // the request is to change the language
+        $language = $_POST["language"];
+        setcookie("language", $language, time() + (24 * 60 * 60 * 30), "/"); // 30 days
+        $msg = "Language changed to " . $_POST["language"];
+    }
+    else if ($_POST["req"] == "LOGIN") {
+        $SESSION_['user'] = $_POST["email"];
+    }
+}
+
 $user_login = $SESSION_['user'] ?? false;
 if (!$user_login) {  // user should only be able to access this page after logging in
     header("Location: login.php");  // redirect to login page
     exit();
 }
 
-
-$language = $_COOKIE['language'] ?? 'en';
-$msg = "";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $language = $_POST["language"];
-    setcookie("language", $language, time() + (24 * 60 * 60 * 30), "/"); // 30 days
-    $msg = "Language changed to " . $_POST["language"];
-}
 ?>
 
 <!doctype html>
@@ -47,6 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <li class="lang-chg trans-17">
                 <form id="language-form" action="contact.php" method="POST">
                     <input type="hidden" name="language" id="language-input">
+                    <input type="hidden" name="req" value="LANG">
                     <button type="submit"><img id="change-language-img" alt="Button that changes the page's language" src="images/buttons/globe-white-es.webp"></button>
                 </form>
             </li>

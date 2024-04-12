@@ -25,8 +25,8 @@ function applyMainLanguageChange(newlang) {
     var $contactsTitle = $('#page-title');
 
     // update page title, nav text, and various titles across the page
-    document.title = newlang === 'es' ? 'Luna | Contacto' : 'Luna | Contact';
-    $contactsTitle.html(newlang === 'es' ? 'Contacto' : 'Contact Us');
+    document.title = newlang === 'es' ? 'Luna | Inicio Sesión' : 'Luna | Login';
+    $contactsTitle.html(newlang === 'es' ? 'Inicio Sesión' : 'Login');
 }
 
 function loadContentInLang(language) {

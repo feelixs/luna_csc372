@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" type="text/css" href="css/flex-boxes.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/contact.css">
-    <title>Luna | Contact</title>
+    <title>Luna | Login</title>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- if we fail to load from the CDN, use our local download of jquery -->
@@ -48,13 +48,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <main>
     <div class="trans-contained-box page-title-white grey-bg">
         <div class="main-title-text">
-            <h1 id="page-title">Contact Us</h1>
+            <h1 id="page-title">Login</h1>
         </div>
         <div class="trans-contained-box black-bg rounded inner-div padding-20" id="form-div">
             <div class="flex-container">
                 <p id="contact-desc">Please login using your email address in order to contact us!</p>
             </div>
-                <form action="contact.php" method="POST">
+                <form action="contact.php" method="POST" id="login-form">
+                    <input type="hidden" name="req" value="LOGIN">
                     <label>
                         <span class="flex-container-start margin-left-small" id="contact-email-header">Your email:</span>
                         <span class="flex-container">
@@ -63,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </label>
                    <br>
                     <div class="flex-container">
-                        <button id="submit-btn" class="half-rounded submit" type="submit">Send</button>
+                        <button id="submit-btn" class="half-rounded submit" type="submit">Login</button>
                     </div>
                 </form>
         </div>
