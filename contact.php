@@ -75,7 +75,7 @@ if (!$user_login) {  // user should only be able to access this page after loggi
                     <button type="submit">Not You?</button>
                 </form>
             </div>
-
+            <span class="blank-space"></span>
             <form action="https://formspree.io/f/mnqevjdk" method="POST">
                 <input type="hidden" name="email" value=<?= $user_login ?>>
                 <label>
