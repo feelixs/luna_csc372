@@ -4,9 +4,6 @@ var currentLang = 'en';
 var $langForm = $('#language-form');
 var $langInput = $('#language-input');
 
-$(document).ready(function () {
-   $('html').attr('lang', currentLang); // set the html lang attribute to the current language
-});
 
 $langForm.on('submit', function(e) {
     // function to submit the language value of the form to the page's php
