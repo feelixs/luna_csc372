@@ -69,8 +69,7 @@ if (!$user_login) {  // user should only be able to access this page after loggi
             <div class="flex-container">
                 <form action="logout.php" method="POST">
                     <span class="flex-container-start margin-left-small" id="contact-email-header">Your email:</span>
-                    <span class="flex-container">
-                    <p><?= $user_login ?></p>
+                    <span class="flex-container"><p><?= $user_login ?></p></span>
                     <div class="flex-container">
                         <button id="submit-btn" class="half-rounded submit" type="submit">Logout</button>
                     </div>
