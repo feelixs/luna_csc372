@@ -81,6 +81,7 @@ if (!$user_login) {  // user should only be able to access this page after loggi
                 <p id="contact-desc">Got a question or just want to say hi? We'd love to hear from you!</p>
             </div>
                 <form action="https://formspree.io/f/mnqevjdk" method="POST">
+                    <input type="hidden" name="email" value=<?= $user_login ?>>
                     <label>
                         <span class="flex-container-start margin-left-small" id="contact-msg-header">Your message:</span>
                         <span class="flex-container">
