@@ -19,11 +19,17 @@ button.text-btn {
     padding: 0;
     background: none;
     border: none;
-    color: inherit;
     text-align: inherit;
     font-size: inherit;
     margin: 0;
     cursor: pointer;
+    text-decoration: none;
+    color: #c69ee3;
+}
+
+button.text-btn:hover {
+   text-decoration: underline;
+    color: #c69ee3;
 }
 
 .center-text {
