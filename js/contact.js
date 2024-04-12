@@ -25,7 +25,7 @@ function applyMainLanguageChange(newlang) {
     var $contactTitle = $('#page-title');
     var $msgTitle = $('#contact-msg-header');
     var $sendingMsg = $('#sending-info');
-    var notYou = $('#not-you');
+    var $notYou = $('#not-you');
 
     // update page title, nav text, and various titles across the page
     document.title = newlang === 'es' ? 'Luna | Contacto' : 'Luna | Contact';
