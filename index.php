@@ -1,13 +1,13 @@
 <?php
-
+$language = $_COOKIE['language'] ?? 'en';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    setcookie("language", $_POST["language"], time() + (24 * 60 * 60 * 30), "/"); // 30 days
+    $language = $_POST["language"];
+    setcookie("language", $language, time() + (24 * 60 * 60 * 30), "/"); // 30 days
 }
-
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang=<?= $language ?>>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
