@@ -32,6 +32,10 @@ button.text-btn:hover {
     color: #c69ee3;
 }
 
+.orange {
+    color: #ff7f50;
+}
+
 .center-text {
     text-align: center;
 }
