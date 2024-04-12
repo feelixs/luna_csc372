@@ -1,29 +1,12 @@
 // we need to set this here to have its scope be everywhere, we'll change it later
 // - each webpage has its own associated script, which will set the currentlang in document.ready
-var currentLang = getCookie('language') || 'en'; // default to english if no cookie is set
+var currentLang = 'en';
 var $langForm = $('#language-form');
 var $langInput = $('#language-input');
 
 $(document).ready(function () {
    $('html').attr('lang', currentLang); // set the html lang attribute to the current language
 });
-
-function getCookie(cname) {
-    // from https://www.w3schools.com/js/js_cookies.asp
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for(let i = 0; i <ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
 
 $langForm.on('submit', function(e) {
     // function to submit the language value of the form to the page's php
