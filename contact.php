@@ -67,30 +67,27 @@ if (!$user_login) {  // user should only be able to access this page after loggi
         </div>
         <div class="trans-contained-box black-bg rounded inner-div padding-20" id="form-div">
             <div class="flex-container">
+                <p id="contact-desc">Got a question or just want to say hi? We'd love to hear from you!</p>
+            </div>
+            <div class="flex-container">
+                Sending message as: <span class="orange"><?= $user_login ?></span>
                 <form action="logout.php" method="POST">
-                    <span class="flex-container-start margin-left-small" id="contact-email-header">Your email:</span>
-                    <span class="flex-container"><p><?= $user_login ?></p></span>
-                    <div class="flex-container">
-                        <button id="submit-btn" class="half-rounded submit" type="submit">Logout</button>
-                    </div>
+                    <button type="submit">Not You?</button>
                 </form>
             </div>
 
-            <div class="flex-container">
-                <p id="contact-desc">Got a question or just want to say hi? We'd love to hear from you!</p>
-            </div>
-                <form action="https://formspree.io/f/mnqevjdk" method="POST">
-                    <input type="hidden" name="email" value=<?= $user_login ?>>
-                    <label>
-                        <span class="flex-container-start margin-left-small" id="contact-msg-header">Your message:</span>
-                        <span class="flex-container">
-                            <textarea name="message"></textarea>
-                        </span>
-                    </label><br>
-                    <div class="flex-container">
-                        <button id="submit-btn" class="half-rounded submit" type="submit">Send</button>
-                    </div>
-                </form>
+            <form action="https://formspree.io/f/mnqevjdk" method="POST">
+                <input type="hidden" name="email" value=<?= $user_login ?>>
+                <label>
+                    <span class="flex-container-start margin-left-small" id="contact-msg-header">Your message:</span>
+                    <span class="flex-container">
+                        <textarea name="message"></textarea>
+                    </span>
+                </label><br>
+                <div class="flex-container">
+                    <button id="submit-btn" class="half-rounded submit" type="submit">Send</button>
+                </div>
+            </form>
         </div>
     <p><?= $msg ?></p>
     </div>
