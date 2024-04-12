@@ -10,11 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $msg = "Language changed to " . $_POST["language"];
     }
     else if ($_POST["req"] == "LOGIN") {
-        $SESSION_['user'] = $_POST["email"];
+        $_SESSION['user'] = $_POST["email"];
     }
 }
 
-$user_login = $SESSION_['user'] ?? false;
+$user_login = $_SESSION['user'] ?? false;
 if (!$user_login) {  // user should only be able to access this page after logging in
     header("Location: login.php");  // redirect to login page
     exit();
