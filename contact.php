@@ -72,7 +72,7 @@ if (!$user_login) {  // user should only be able to access this page after loggi
             <div class="flex-container">
                 Sending message as: <span class="orange"><?= $user_login ?></span>
                 <form action="logout.php" method="POST">
-                    <button type="submit">Not You?</button>
+                    <button type="submit" class="text-btn">Not You?</button>
                 </form>
             </div>
             <span class="blank-space"></span>
