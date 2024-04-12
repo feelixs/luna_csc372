@@ -1,17 +1,11 @@
 <?php
-
-
 $language = $_COOKIE['language'] ?? 'en';
-
-
 $msg = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $language = $_POST["language"];
     setcookie("language", $language, time() + (24 * 60 * 60 * 30), "/"); // 30 days
     $msg = "Language changed to " . $_POST["language"];
 }
-
-
 ?>
 
 <!doctype html>
