@@ -23,10 +23,12 @@ function applyMainLanguageChange(newlang) {
         Applies language change to the page's main text, this will be overriden for each page
     */
     var $contactsTitle = $('#page-title');
+    var $emailTitle = $('#contact-email-header');
 
     // update page title, nav text, and various titles across the page
     document.title = newlang === 'es' ? 'Luna | Inicio Sesión' : 'Luna | Login';
     $contactsTitle.html(newlang === 'es' ? 'Inicio Sesión' : 'Login');
+    $emailTitle.html(newlang === 'es' ? 'Tu correo electrónico:' : 'Your Email:');
 }
 
 function loadContentInLang(language) {
