@@ -1,12 +1,4 @@
 <?php
-
-$user_login = $SESSION_['user'] ?? false;
-if (!$user_login) {  // user should only be able to access this page after logging in
-    header("Location: login.php");  // redirect to login page
-    exit();
-}
-
-
 $language = $_COOKIE['language'] ?? 'en';
 $msg = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -60,26 +52,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="trans-contained-box black-bg rounded inner-div padding-20" id="form-div">
             <div class="flex-container">
-                <form action="logout.php" method="POST">
-                    <span class="flex-container-start margin-left-small" id="contact-email-header">Your email:</span>
-                    <span class="flex-container">
-                    <p><?= $user_login ?></p>
-                    <div class="flex-container">
-                        <button id="submit-btn" class="half-rounded submit" type="submit">Logout</button>
-                    </div>
-                </form>
+                <p id="contact-desc">Please login using your email address in order to contact us!</p>
             </div>
-
-            <div class="flex-container">
-                <p id="contact-desc">Got a question or just want to say hi? We'd love to hear from you!</p>
-            </div>
-                <form action="https://formspree.io/f/mnqevjdk" method="POST">
+                <form action="contact.php" method="POST">
                     <label>
-                        <span class="flex-container-start margin-left-small" id="contact-msg-header">Your message:</span>
+                        <span class="flex-container-start margin-left-small" id="contact-email-header">Your email:</span>
                         <span class="flex-container">
-                            <textarea name="message"></textarea>
+                            <input type="email" name="email">
                         </span>
-                    </label><br>
+                    </label>
+                   <br>
                     <div class="flex-container">
                         <button id="submit-btn" class="half-rounded submit" type="submit">Send</button>
                     </div>
@@ -104,6 +86,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </footer>
 
 <script src="js/change-language.js"></script>
-<script src="js/contact.js"></script>
+<script src="js/login.js"></script>
 </body>
 </html>
