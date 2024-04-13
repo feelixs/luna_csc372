@@ -17,7 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // verify the user input
         if (!check_input($parse_email)) {
             // invalid input: redirect back to login with error message
-            header("Location: login.php?error=Input%20Too%20Large");
+            header("Location: login.php?error=Invalid%20Input");
+        }
+        if (!check_len($parse_email, 5, 75)) {
+            header("Location: login.php?error=Bad%20Input%20Length");
         }
         if (!check_option($response_expected)) {
             header("Location: login.php?error=Unknown%20Option");
