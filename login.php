@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </label>
                    <br>
                    <div class="flex-container">
-                       <input type="checkbox" required>&ensp;&ensp;<span id="agree" style="font-size: 0.8em"><span class="orange">(required)</span> I agree to share my email, and to receive message(s) in my inbox in response to my inquiry, if applicable</span>
+                       <input type="checkbox" required>&ensp;&ensp;<span style="font-size: 0.8em"><span class="orange required-txt">(required) </span id="agree">I agree to share my email, and to receive message(s) in my inbox in response to my inquiry, if applicable</span>
                    </div>
                    <br>
                    <div class="flex-container">
@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                            <option value="">-</option>
                            <option value="1">Yes</option>
                            <option value="0">No</option>
-                       </select>&ensp;&ensp;<span id="expect-response" style="font-size: 0.8em"><span class="orange">(required)</span> Are you expecting a response from your message(s)?</span>
+                       </select>&ensp;&ensp;<span style="font-size: 0.8em"><span class="orange required-txt">(required) </span id="expect-response">Are you expecting a response from your message(s)?</span>
                    </div>
                    <br>
                    <div class="flex-container">

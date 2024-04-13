@@ -6,6 +6,8 @@ $(document).ready(function () {
         Load this page's content in the default language when the page loads.
     */
     loginTextFields.push(new XMLDualLangTextField(`data/xml/contact-login.xml`, 0, $('#contact-desc')));
+    loginTextFields.push(new XMLDualLangTextField(`data/xml/contact-login.xml`, 1, $('#agree')));
+    loginTextFields.push(new XMLDualLangTextField(`data/xml/contact-login.xml`, 2, $('#expect-response')));
     loginTextFields.push(new HTMLDualLangTextField(`data/html/footer`, $('#footer-text')));
     loginTextFields.push(new HTMLDualLangTextField( `data/html/copyright`, $('#copyright')));
     loginDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp',
@@ -24,11 +26,14 @@ function applyMainLanguageChange(newlang) {
     */
     var $contactsTitle = $('#page-title');
     var $emailTitle = $('#contact-email-header');
-
+    var $reqTxt = $('.required-txt');
+    var $loginBtn = $('#submit-btn');
     // update page title, nav text, and various titles across the page
     document.title = newlang === 'es' ? 'Luna | Inicio Sesión' : 'Luna | Login';
     $contactsTitle.html(newlang === 'es' ? 'Inicio Sesión' : 'Login');
     $emailTitle.html(newlang === 'es' ? 'Tu correo electrónico:' : 'Your Email:');
+    $reqTxt.html(newlang === 'es' ? '(obligatorio) ' : '(required) ');
+    $loginBtn.html(newlang === 'es' ? '¡Contacto!' : 'Contact!');
 }
 
 function loadContentInLang(language) {
