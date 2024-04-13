@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // invalid input: redirect back to login with error message
             header("Location: login.php?error=Invalid%20Input");
         }
-        if (!check_len($parse_email, 5, 75)) {
+        if (!check_len($parse_email, 5, 75)) { // email should be between 5 and 75 length
             header("Location: login.php?error=Bad%20Input%20Length");
         }
         if (!check_option($response_expected)) {
