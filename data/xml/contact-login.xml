@@ -2,7 +2,7 @@
 <root>
     <field>
         <name>Form Description</name>
-        <en>Please login using your email address in order to contact us!</en>
-        <es>¡Inicie sesión con su dirección de correo electrónico para contactarnos!</es>
+        <en>Please enter the email address you wish to use when contacting us</en>
+        <es>Por favor ingrese la dirección de correo electrónico que desea utilizar cuando se comunique con nosotros</es>
     </field>
 </root>
