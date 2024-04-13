@@ -15,6 +15,10 @@ footer {
     color: white;
 }
 
+.mini-text {
+    font-size: 0.8em;
+}
+
 button.text-btn {
     padding: 0;
     background: none;
