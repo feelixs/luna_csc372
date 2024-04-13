@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $user_login = $_SESSION['user'] ?? false;
 if (!$user_login) {  // user should only be able to access this page after logging in
-    header("Location: login.php");  // redirect to login page
+    header("Location: login.php?error=Please%20Enter%20An%20Email");  // redirect to login page
     exit();
 }
 
