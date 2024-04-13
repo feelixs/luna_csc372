@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </label>
                    <br>
                    <div class="flex-container">
-                       <input type="checkbox" required>&ensp;&ensp;<span class="mini-text"><span class="orange required-txt">(required) </span><span id="agree" style="font-size: 0.8em">I agree to share my email, and to receive message(s) in my inbox in response to my inquiry, if applicable</span></span>
+                       <input type="checkbox" required>&ensp;&ensp;<span class="mini-text"><span class="orange required-txt">(required) </span><span id="agree">I agree to share my email, and to receive message(s) in my inbox in response to my inquiry, if applicable</span></span>
                    </div>
                    <br>
                    <div class="flex-container">
