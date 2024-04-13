@@ -1,5 +1,7 @@
 <?php
 
+include 'php/sanitize.php';
+
 session_start();
 $language = $_COOKIE['language'] ?? 'en';
 $msg = "";
@@ -10,7 +12,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $msg = "Language changed to " . $_POST["language"];
     }
     else if ($_POST["req"] == "LOGIN") {
-        $_SESSION['user'] = $_POST["email"];
+        $parse_email = $_POST["email"];
+        $response_expected = $_POST["response-expected"];
+        // verify the user input
+        if (!check_input($parse_email)) {
+            // invalid input: redirect back to login with error message
+            header("Location: login.php?error=Invalid%20Input");
+        }
+        if (!check_option($response_expected)) {
+            header("Location: login.php?error=Unknown%20Option");
+        }
+
+        // all checks passed
+        $_SESSION['user'] = $parse_email;
+        $_SESSION['response-expected'] = $_POST["response-expected"];
     }
 }
 

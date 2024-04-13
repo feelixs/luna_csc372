@@ -5,6 +5,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $language = $_POST["language"];
     setcookie("language", $language, time() + (24 * 60 * 60 * 30), "/"); // 30 days
     $msg = "Language changed to " . $_POST["language"];
+} else {
+    $error = $_GET["error"] ?? "";
+    if ($error != "") {
+        // display the error given in the url query params
+        $msg = "Error: " . $error;
+    }
 }
 ?>
 
@@ -68,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                    </div>
                    <br>
                    <div class="flex-container">
-                       <select required>
+                       <select name="response-expected" required>
                            <option value="">-</option>
                            <option value="1">Yes</option>
                            <option value="0">No</option>
