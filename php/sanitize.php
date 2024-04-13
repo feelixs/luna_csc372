@@ -6,9 +6,11 @@ function check_input(string $email) {
         // verifies that the email is valid (true) = valid, (false) = not valid
         return false;
     }
-    // check the length of the email
-    if (strlen($email) > 100 || strlen($email) < 5) {
-        // emails less than 5 characters are probably invalid (minimum could maybe be d@r.c)
+    return true;
+}
+
+function check_len(string $input, int $min, int $max) {
+    if (strlen($input) < $min || strlen($input) > $max) {
         return false;
     }
     return true;
