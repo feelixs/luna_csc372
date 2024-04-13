@@ -18,17 +18,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!check_input($parse_email)) {
             // invalid input: redirect back to login with error message
             header("Location: login.php?error=Invalid%20Input");
+            exit();
         }
-        else if (!check_len($parse_email, 5, 75)) { // email should be between 5 and 75 length
+        if (!check_len($parse_email, 5, 75)) { // email should be between 5 and 75 length
             header("Location: login.php?error=Bad%20Input%20Length");
+            exit();
         }
-        else if (!check_option($response_expected)) {
+        if (!check_option($response_expected)) {
             header("Location: login.php?error=Unknown%20Option");
-        } else {
-            // all checks passed
-            $_SESSION['user'] = $parse_email;
-            $_SESSION['response-expected'] = $_POST["response-expected"];
+            exit();
         }
+
+        // all checks passed
+        $_SESSION['user'] = $parse_email;
+        $_SESSION['response-expected'] = $_POST["response-expected"];
     }
 }
 
