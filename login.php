@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="trans-contained-box black-bg rounded inner-div padding-20" id="form-div">
             <div class="flex-container">
-                <p id="contact-desc">Please login using your email address in order to contact us!</p>
+                <p id="contact-desc">Please enter the email address you wish to use when contacting us</p>
             </div>
                 <form action="contact.php" method="POST" id="login-form">
                     <input type="hidden" name="req" value="LOGIN">
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </label>
                    <br>
                     <div class="flex-container">
-                        <button id="submit-btn" class="half-rounded submit" type="submit">Login</button>
+                        <button id="submit-btn" class="half-rounded submit" type="submit">Contact!</button>
                     </div>
                 </form>
         </div>
