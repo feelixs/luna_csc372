@@ -7,8 +7,8 @@
     </field>
     <field>
         <name>Form Description</name>
-        <en>I agree to share my email, and to receive message(s) in my inbox in response, if applicable</en>
-        <es>Acepto compartir mi correo electrónico y recibir mensajes en mi bandeja de entrada en respuesta, si corresponde</es>
+        <en>I agree to share my email, and to receive message(s) in my inbox in response, if applicable.</en>
+        <es>Acepto compartir mi correo electrónico y recibir mensajes en mi bandeja de entrada en respuesta, si corresponde.</es>
     </field>
     <field>
         <name>Expect a response</name>
