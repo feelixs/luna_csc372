@@ -63,9 +63,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </span>
                     </label>
                    <br>
-                    <div class="flex-container">
-                        <button id="submit-btn" class="half-rounded submit" type="submit">Contact!</button>
-                    </div>
+                   <div class="flex-container">
+                       <select required>
+                           <option value="">-</option>
+                           <option value="1">Yes</option>
+                           <option value="0">No</option>
+                       </select>&ensp;&ensp;<span id="expect-response" style="font-size: 0.8em"><span class="orange">(required)</span> Should we respond to any messages you send?</span>
+                   </div>
+                   <br>
+                   <div class="flex-container">
+                       <input type="checkbox" required>&ensp;&ensp;<span id="agree" style="font-size: 0.8em"><span class="orange">(required)</span> I agree to share my email, and to receive message(s) in my inbox in response to my inquiry, if applicable</span>
+                   </div>
+                   <br>
+                   <div class="flex-container">
+                       <button id="submit-btn" class="half-rounded submit" type="submit">Contact!</button>
+                   </div>
                 </form>
         </div>
     <p><?= $msg ?></p>
