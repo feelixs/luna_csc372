@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                            <option value="">-</option>
                            <option value="1">Yes</option>
                            <option value="0">No</option>
-                       </select>&ensp;&ensp;<span class="mini-text"><span class="orange required-txt">(required) </span><span id="expect-response">Are you expecting a response from your message(s)?</span></span>
+                       </select>&ensp;&ensp;<span class="mini-text"><span class="orange required-txt">(required) </span><span id="expect-response">Are you expecting a response to your message(s)?</span></span>
                    </div>
                    <br>
                    <div class="flex-container">
