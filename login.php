@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label>
                         <span class="flex-container-start margin-left-small" id="contact-email-header">Your email:</span>
                         <span class="flex-container">
-                            <input type="email" name="email">
+                            <input required type="email" name="email">
                         </span>
                     </label>
                    <br>
