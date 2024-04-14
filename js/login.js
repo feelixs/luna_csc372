@@ -33,7 +33,7 @@ function applyMainLanguageChange(newlang) {
     $contactsTitle.html(newlang === 'es' ? 'Inicio Sesión' : 'Login');
     $emailTitle.html(newlang === 'es' ? 'Tu correo electrónico:' : 'Your Email:');
     $reqTxt.html(newlang === 'es' ? '(obligatorio) ' : '(required) ');
-    $loginBtn.html(newlang === 'es' ? '¡Contacto!' : 'Contact!');
+    $loginBtn.html(newlang === 'es' ? '¡Contacto!' : 'View Form');
 }
 
 function loadContentInLang(language) {
