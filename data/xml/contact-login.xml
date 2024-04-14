@@ -12,7 +12,7 @@
     </field>
     <field>
         <name>Expect a response</name>
-        <en>Are you expecting a response from your message(s)?</en>
+        <en>Are you expecting a response to your message(s)?</en>
         <es>¿Espera una respuesta de su mensaje(s)?</es>
     </field>
 </root>
