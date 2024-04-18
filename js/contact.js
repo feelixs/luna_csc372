@@ -48,3 +48,12 @@ function loadContentInLang(language) {
         cntDualImages[i].getImg(language);
     }
 }
+
+$('#contact-form').on('submit',  function() {
+    var message = $('#submit-txtarea').value;
+    if (message.length >= 1000) {
+        alert("Your message should be less than 1000 characters.");
+        return false; // prevent form from submitting
+    }
+    return true; // submit form
+});

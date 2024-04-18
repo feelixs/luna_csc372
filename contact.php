@@ -97,12 +97,12 @@ if (!$user_login) {  // user should only be able to access this page after loggi
                 </form>
             </div>
             <span class="blank-space"></span>
-            <form action="https://formspree.io/f/mnqevjdk" method="POST">
+            <form action="https://formspree.io/f/mnqevjdk" method="POST" id="contact-form">
                 <input type="hidden" name="email" value=<?= $user_login ?>>
                 <label>
                     <span class="flex-container-start margin-left-small" id="contact-msg-header">Your message:</span>
                     <span class="flex-container">
-                        <textarea maxlength="999" name="message"></textarea>
+                        <textarea id="submit-txtarea" maxlength="999" name="message"></textarea>
                     </span>
                 </label><br>
                 <div class="flex-container">
