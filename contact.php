@@ -102,7 +102,7 @@ if (!$user_login) {  // user should only be able to access this page after loggi
                 <label>
                     <span class="flex-container-start margin-left-small" id="contact-msg-header">Your message:</span>
                     <span class="flex-container">
-                        <textarea name="message"></textarea>
+                        <textarea maxlength="999" name="message"></textarea>
                     </span>
                 </label><br>
                 <div class="flex-container">
