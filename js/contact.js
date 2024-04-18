@@ -49,11 +49,10 @@ function loadContentInLang(language) {
     }
 }
 
-$('#contact-form').on('submit',  function() {
+$('#contact-form').on('submit',  function(e) {
     var message = $('#submit-txtarea').value;
     if (message.length >= 1000) {
         alert("Your message should be less than 1000 characters.");
-        return false; // prevent form from submitting
+        e.preventDefault() // prevent form submission
     }
-    return true; // submit form
 });
