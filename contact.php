@@ -123,16 +123,15 @@ $user_messages = $statement->fetchAll();
         <div class="trans-contained-box padding-20 inner-div">
             <h2>Previous Messages</h2>
             <?php
-            if (empty($user_messages)) {
-                echo "<p>No messages found</p>";
-            } else {
+            if ($user_messages) {
                 foreach ($user_messages as $message) {
-                    echo "---------------------------------<br>";
                     echo "<div class='flex-container'>";
                     echo "<span class='orange'>" . $message['user'] . "</span>";
-                    echo "<span>" . $message['MESSAGE_TEXT'] . "</span>";
+                    echo "<span>" . $message['message_text'] . "</span>";
                     echo "</div>";
                 }
+            } else {
+                echo "<p>No messages found</p>";
             }
             ?>
         </div>
