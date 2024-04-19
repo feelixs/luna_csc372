@@ -108,7 +108,7 @@ $user_messages = pdo($pdo, $sql, ['user_login' => $user_login])->fetchAll();
                 <label>
                     <span class="flex-container-start margin-left-small" id="contact-msg-header">Your message:</span>
                     <span class="flex-container">
-                        <textarea maxlength="1000" id="submit-txtarea" name="message"></textarea>
+                        <textarea id="submit-txtarea" name="message"></textarea>
                     </span>
                 </label><br>
                 <div class="flex-container">
