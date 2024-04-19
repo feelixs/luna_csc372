@@ -116,11 +116,7 @@ $user_messages = $statement->fetchAll();
         </div>
         <div class="trans-contained-box padding-20 inner-div">
             <h2>Previous Messages</h2>
-            <?=
 
-
-
-            ?>
         </div>
     <p><?= $msg ?></p>
     </div>
