@@ -118,6 +118,7 @@ $user_messages = $statement->fetchAll();
         <div class="trans-contained-box padding-20 inner-div">
             <h2>Previous Messages</h2>
             <?php
+            echo $user_messages;
             if ($user_messages) {
                 $i = 0;
                 foreach ($user_messages as $message) {
