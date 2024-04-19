@@ -1,7 +1,6 @@
 <?php
 
 include 'php/sanitize.php';
-include 'php/submitMsg.php';
 require 'php/connection.php';
 
 session_start();
@@ -108,7 +107,7 @@ $user_messages = $statement->fetchAll();
                 </form>
             </div>
             <span class="blank-space"></span>
-            <form action="php/submitMsg.php" method="POST" id="contact-form">
+            <form action="php/connection.php" method="POST" id="contact-form">
                 <input type="hidden" name="email" value=<?= $user_login ?>>
                 <label>
                     <span class="flex-container-start margin-left-small" id="contact-msg-header">Your message:</span>
