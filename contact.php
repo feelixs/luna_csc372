@@ -116,7 +116,16 @@ $user_messages = $statement->fetchAll();
         </div>
         <div class="trans-contained-box padding-20 inner-div">
             <h2>Previous Messages</h2>
+            <?=
 
+            foreach ($user_messages as $message) {
+                echo "<div class='flex-container'>";
+                echo "<span class='orange'>" . $message['user'] . "</span>";
+                echo "<span>" . $message['message_text'] . "</span>";
+                echo "</div>";
+            }
+
+            ?>
         </div>
     <p><?= $msg ?></p>
     </div>
