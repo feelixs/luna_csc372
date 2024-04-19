@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $query = $pdo->prepare($sql);
         $query->execute($params);
 
-        header("Location: ../logout.php"); // message sent, logout the user
+        header("Location: ../logout.php?Message%20%Sent%20Successfully"); // message sent, logout the user
         exit();
     }
 }
