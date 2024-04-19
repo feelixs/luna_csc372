@@ -50,7 +50,16 @@ function pdo(PDO $pdo, string $sql, array $arguments = null)
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = 'm@3.com';
+    $message = 'test;';
 
+    $sql = "INSERT INTO messages VALUES (:MESSAGE_TEXT, :user, NOW())";
+    $statement = [];
+    $statement['user'] = $email;
+    $statement['MESSAGE_TEXT'] = $message;
+
+    $query = $pdo->prepare($sql);
+    $query->execute($statement);
 
     header("Location: ../contact.php?status=200");
     exit();
