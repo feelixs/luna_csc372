@@ -33,6 +33,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // all checks passed
         $_SESSION['user'] = $parse_email;
         $_SESSION['response-expected'] = $_POST["response-expected"];
+
+        // insert email into users
+        // email is the key, so gracefully fail on duplicate (if the email already has been registered)
+        $user_sql = "INSERT INTO users (email) VALUES (:email) ON DUPLICATE KEY UPDATE email=email";
+        $params = [];
+        $params['user'] = $parse_email;
+        $query = $pdo->prepare($user_sql);
+        $query->execute($params);
     }
 }
 
