@@ -135,7 +135,7 @@ $user_messages = pdo($pdo, $sql, ['user_login' => $user_login])->fetchAll();
                         $trimmed_message_text .= '...';
                     }
 
-                    echo "<div class='flex-container'>";
+                    echo "<div style='justify-content:left' class='flex-container'>";
                     echo "<span class='orange'>" . $message['timestamp'] . "</span>";
                     echo "<span style='margin-left: 10px;text-align:left'>" . htmlspecialchars($trimmed_message_text) . "</span>";
                     echo "</div>";
