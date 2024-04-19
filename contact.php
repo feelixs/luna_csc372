@@ -121,6 +121,7 @@ $user_messages = $statement->fetchAll();
             if ($user_messages) {
                 foreach ($user_messages as $message) {
                     echo "<div class='flex-container'>";
+                    echo "<span class='orange'>message:</span>";
                     echo "<span class='orange'>" . $message['user'] . "</span>";
                     echo "<span>" . $message['message_text'] . "</span>";
                     echo "</div>";
