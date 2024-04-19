@@ -129,9 +129,15 @@ $user_messages = pdo($pdo, $sql, ['user_login' => $user_login])->fetchAll();
                         echo "</div>";
                         break;
                     }
+                    // trim the message length to 100 so it doesnt take up too much space
+                    $trimmed_message_text = mb_substr($message['MESSAGE_TEXT'], 0, 100, "UTF-8");
+                    if (mb_strlen($message['MESSAGE_TEXT'], "UTF-8") > 100) {
+                        $trimmed_message_text .= '...';
+                    }
+
                     echo "<div style='justify-content:left' class='flex-container'>";
                     echo "<span class='orange'>" . $message['timestamp'] . "</span>";
-                    echo "&ensp;&ensp;&ensp;&ensp;<span>" . $message['MESSAGE_TEXT'] . "</span>";
+                    echo "&ensp;&ensp;&ensp;&ensp;<span>" . htmlspecialchars($trimmed_message_text) . "</span>";
                     echo "</div>";
                     $i++;
                 }
