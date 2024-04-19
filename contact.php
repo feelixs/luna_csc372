@@ -108,6 +108,7 @@ $user_messages = $statement->fetchAll();
             </div>
             <span class="blank-space"></span>
             <form action="php/connection.php" method="POST" id="contact-form">
+                <input type="hidden" name="req" value="SUBMIT_MESSAGE">
                 <input type="hidden" name="email" value=<?= $user_login ?>>
                 <label>
                     <span class="flex-container-start margin-left-small" id="contact-msg-header">Your message:</span>

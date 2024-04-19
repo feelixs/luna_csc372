@@ -50,19 +50,21 @@ function pdo(PDO $pdo, string $sql, array $arguments = null)
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
-    $message = $_POST['message'];
+    if ($_GET['req'] == "SUBMIT_MESSAGE") {
+        $email = $_POST['email'];
+        $message = $_POST['message'];
 
-    $sql = "INSERT INTO messages VALUES (:MESSAGE_TEXT, :user, NOW())";
-    $params = [];
-    $params['user'] = $email;
-    $params['MESSAGE_TEXT'] = $message;
+        $sql = "INSERT INTO messages VALUES (:MESSAGE_TEXT, :user, NOW())";
+        $params = [];
+        $params['user'] = $email;
+        $params['MESSAGE_TEXT'] = $message;
 
-    $query = $pdo->prepare($sql);
-    $query->execute($params);
+        $query = $pdo->prepare($sql);
+        $query->execute($params);
 
-    header("Location: ../contact.php?status=200");
-    exit();
+        header("Location: ../contact.php?status=200");
+        exit();
+    }
 }
 
 ?>
