@@ -68,3 +68,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <p>You will be redirected soon...</p>
+    <p>If you are not redirected, <a href="../contact.php">click here</a></p>
+</html>
