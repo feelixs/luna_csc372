@@ -1,4 +1,9 @@
 <?php
+if ($_SESSION['user'] != null) {
+    header("Location: contact.php");
+    exit();
+}
+
 $language = $_COOKIE['language'] ?? 'en';
 $msg = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
