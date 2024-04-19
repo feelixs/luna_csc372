@@ -120,7 +120,7 @@ $user_messages = $statement->fetchAll();
             <?php
             echo $user_messages;
             foreach ($user_messages as $message) {
-                echo $message['message_text'];
+                echo $message['MESSAGE_TEXT'];
             }
             if ($user_messages) {
                 $i = 0;
@@ -128,7 +128,7 @@ $user_messages = $statement->fetchAll();
                     echo "<div class='flex-container'>";
                     echo "<span class='orange'>message:</span>";
                     echo "<span class='orange'>" . $message['user'] . "</span>";
-                    echo "<span>" . $message['message_text'] . "</span>";
+                    echo "<span>" . $message['MESSAGE_TEXT'] . "</span>";
                     echo "</div>";
                     $i++;
                     if ($i > 5) {
