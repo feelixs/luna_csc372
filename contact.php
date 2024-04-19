@@ -1,6 +1,7 @@
 <?php
 
 include 'php/sanitize.php';
+include 'php/submitMsg.php';
 require 'php/connection.php';
 
 session_start();
@@ -33,6 +34,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // all checks passed
         $_SESSION['user'] = $parse_email;
         $_SESSION['response-expected'] = $_POST["response-expected"];
+    }
+} else if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    if ($_GET["status"] == "200") {
+        $msg = "Message sent successfully!";
+    } else if ($_GET["status"] == "500") {
+        $msg = "Message failed to send!";
     }
 }
 
@@ -101,7 +108,7 @@ $user_messages = $statement->fetchAll();
                 </form>
             </div>
             <span class="blank-space"></span>
-            <form action="https://formspree.io/f/mnqevjdk" method="POST" id="contact-form">
+            <form action="submitMsg.php" method="POST" id="contact-form">
                 <input type="hidden" name="email" value=<?= $user_login ?>>
                 <label>
                     <span class="flex-container-start margin-left-small" id="contact-msg-header">Your message:</span>
