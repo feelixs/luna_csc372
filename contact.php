@@ -142,7 +142,7 @@ $user_messages = pdo($pdo, $sql, ['user_login' => $user_login])->fetchAll();
                     $i++;
                 }
             } else {
-                echo "<p>No messages found</p>";
+                echo "<p style='text-align: center'>No messages found</p>";
             }
             ?>
         </div>
