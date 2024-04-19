@@ -146,6 +146,11 @@ $user_messages = pdo($pdo, $sql, ['user_login' => $user_login])->fetchAll();
                     echo "<div style='justify-content:left' class='flex-container'>";
                     echo "<span style='width:100%' class='orange'>" . $message['timestamp'] . "</span>";
                     echo "<span style='width:100%'>" . htmlspecialchars($trimmed_message_text) . "</span>";
+                    echo "<form action='php/connection.php' method='POST'>";
+                        echo "<input type='hidden' name='req' value='DELETE_MESSAGE'>";
+                        echo "<input type='hidden' name='msg_timestamp' value='" . $message['timestamp'] . "'>";
+                        echo "<button type='submit' class='text-btn'>Delete</button>";
+                    echo "</form>";
                     echo "</div>";
                     $i++;
                 }
