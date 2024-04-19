@@ -137,7 +137,7 @@ $user_messages = pdo($pdo, $sql, ['user_login' => $user_login])->fetchAll();
 
                     echo "<div style='justify-content:left' class='flex-container'>";
                     echo "<span class='orange'>" . $message['timestamp'] . "</span>";
-                    echo "&ensp;&ensp;&ensp;&ensp;<span>" . htmlspecialchars($trimmed_message_text) . "</span>";
+                    echo "&ensp;&ensp;&ensp;&ensp;&ensp;<span>" . htmlspecialchars($trimmed_message_text) . "</span>";
                     echo "</div>";
                     $i++;
                 }
