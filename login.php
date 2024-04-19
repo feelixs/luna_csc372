@@ -1,9 +1,15 @@
 <?php
 
-session_start();
-if ($_SESSION['user'] != null) {
-    header("Location: contact.php");
-    exit();
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    session_start();
+    if ($_SESSION['user'] != null) {
+        if ($_GET['numDeleted'] != null) {
+            header("Location: contact.php?numDeleted=" . $_GET['numDeleted']);
+            exit();
+        } else {
+            header("Location: contact.php");
+            exit();}
+    }
 }
 
 $language = $_COOKIE['language'] ?? 'en';

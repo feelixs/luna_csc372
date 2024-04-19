@@ -50,6 +50,10 @@ if (!$user_login) {  // user should only be able to access this page after loggi
     exit();
 }
 
+if ($_GET['numDeleted'] != null) {
+    $msg = "Deleted " . $_GET['numDeleted'] . " message(s)";
+}
+
 // even tho we're limiting by 5 in the actual php/html, let's retrieve 6 entries to check if we need to display "..."
 $sql = "SELECT * FROM messages WHERE user = :user_login ORDER BY timestamp DESC LIMIT 6";
 $user_messages = pdo($pdo, $sql, ['user_login' => $user_login])->fetchAll();

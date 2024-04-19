@@ -70,7 +70,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $params['msg_timestamp'] = $msg_timestamp;
         $query = $pdo->prepare($sql);
         $query->execute($params);
-        header("Location: /luna/login.php");
+        $numDeleted = $query->rowCount();
+        header("Location: /luna/login.php?numDeleted=$numDeleted");
         exit();
     }
 }
