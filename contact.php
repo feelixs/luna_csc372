@@ -116,17 +116,7 @@ $user_messages = $statement->fetchAll();
         </div>
         <div class="trans-contained-box padding-20 inner-div">
             <h2>Previous Messages</h2>
-            <?=
-            if ($user_messages) {
-                foreach ($user_messages as $message) {
-                    echo "<div class='flex-container'>";
 
-                    echo "</div>";
-                }
-            } else {
-                echo "<p>No messages found</p>";
-            }
-            ?>
         </div>
     <p><?= $msg ?></p>
     </div>
