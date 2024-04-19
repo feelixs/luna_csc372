@@ -41,6 +41,9 @@ if (!$user_login) {  // user should only be able to access this page after loggi
     exit();
 }
 
+$statement = $pdo->prepare("SELECT * FROM messages WHERE email = '$user_login'");
+$user_messages = $statement->fetchAll();
+
 ?>
 
 <!doctype html>
@@ -109,6 +112,21 @@ if (!$user_login) {  // user should only be able to access this page after loggi
                     <button id="submit-btn" class="half-rounded submit" type="submit">Send</button>
                 </div>
             </form>
+        </div>
+        <div class="trans-contained-box padding-20 inner-div">
+            <h2>Previous Messages</h2>
+            <?=
+            if ($user_messages) {
+                foreach ($user_messages as $message) {
+                    echo "<div class='flex-container'>";
+                    echo "<span class='orange'>" . $message['user'] . "</span>";
+                    echo "<span>" . $message['message_text'] . "</span>";
+                    echo "</div>";
+                }
+            } else {
+                echo "<p>No messages found</p>";
+            }
+            ?>
         </div>
     <p><?= $msg ?></p>
     </div>
