@@ -119,6 +119,8 @@ $user_messages = $statement->fetchAll();
             <h2>Previous Messages</h2>
             <?php
             echo $user_messages;
+            echo var_dump($user_messages);
+            echo print_r($user_messages);
             foreach ($user_messages as $message) {
                 echo $message['MESSAGE_TEXT'];
             }
