@@ -38,7 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if ($_GET["status"] == "200") {
         $msg = "Message sent successfully!";
-    } 
+    } else if ($_GET["status"] == "500") {
+        $msg = "Message failed to send!";
+    }
 }
 
 $user_login = $_SESSION['user'] ?? false;
