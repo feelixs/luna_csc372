@@ -62,7 +62,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $query = $pdo->prepare($sql);
         $query->execute($params);
 
-     
+        header("Location: ../contact.php?status=200");
+        exit();
     }
 }
 
