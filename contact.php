@@ -116,7 +116,7 @@ $user_messages = pdo($pdo, $sql, ['user_login' => $user_login])->fetchAll();
                 </div>
             </form>
         </div>
-        <div class="trans-contained-box padding-20 inner-div">
+        <div class="trans-contained-box padding-20 inner-div" style="text-align: left">
             <h2>Previous Messages</h2>
             <?php
             if ($user_messages) {
