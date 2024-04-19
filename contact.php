@@ -1,7 +1,7 @@
 <?php
 
 include 'php/sanitize.php';
-include 'php/connection.php';
+require 'php/connection.php';
 
 session_start();
 $language = $_COOKIE['language'] ?? 'en';
