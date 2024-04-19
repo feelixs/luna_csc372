@@ -118,17 +118,12 @@ $user_messages = pdo($pdo, $sql, ['user_login' => $user_login])->fetchAll();
         <div class="trans-contained-box padding-20 inner-div">
             <h2>Previous Messages</h2>
             <?php
-            echo $user_login . "<br>";
-            echo $user_messages;
-            echo var_dump($user_messages);
-            echo print_r($user_messages);
             if ($user_messages) {
                 $i = 0;
                 foreach ($user_messages as $message) {
                     echo "<div class='flex-container'>";
-                    echo "<span class='orange'>message:</span>";
-                    echo "<span class='orange'>" . $message['user'] . "</span>";
-                    echo "<span>" . $message['MESSAGE_TEXT'] . "</span>";
+                    echo "<span class='orange'>" . $message['timestamp'] . "</span>";
+                    echo "&ensp;&ensp;&ensp;&ensp;<span>" . $message['MESSAGE_TEXT'] . "</span>";
                     echo "</div>";
                     $i++;
                     if ($i > 5) {
