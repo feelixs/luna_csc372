@@ -11,6 +11,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
 }
 
-header("Location: contact.php?status=500"); // no post request was made
-
 ?>
