@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $query = $pdo->prepare($sql);
         $query->execute($params);
     }
-    header("Location: /luna/login.php");
+    header("Location: ../login.php");
     exit();
 }
 
