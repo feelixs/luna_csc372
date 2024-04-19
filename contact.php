@@ -120,7 +120,7 @@ $user_messages = $statement->fetchAll();
             <?php
             echo $user_messages;
             foreach ($user_messages as $message) {
-                echo $message;
+                echo $message['message_text'];
             }
             if ($user_messages) {
                 $i = 0;
