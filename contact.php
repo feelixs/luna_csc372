@@ -87,7 +87,7 @@ $user_messages = pdo($pdo, $sql, ['user_login' => $user_login])->fetchAll();
             <li><a id="home-nav" class="only-desktop" href="/">Home</a></li>
             <li><a id="bios-nav" href="bios.php">About</a></li>
             <li><a id="media-nav" href="gallery.php">Media</a></li>
-            <li><a id="patreon-nav" href="#">Contact</a></li>
+            <li><a id="patreon-nav" href="contact.php">Contact</a></li>
             <li class="lang-chg trans-17">
                 <form id="language-form" action="contact.php" method="POST">
                     <input type="hidden" name="language" id="language-input">
