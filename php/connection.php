@@ -50,8 +50,8 @@ function pdo(PDO $pdo, string $sql, array $arguments = null)
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = 'm@3.com';
-    $message = 'test;';
+    $email = $_POST['email'];
+    $message = $_POST['message'];
 
     $sql = "INSERT INTO messages VALUES (:MESSAGE_TEXT, :user, NOW())";
     $statement = [];
