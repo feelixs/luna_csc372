@@ -54,12 +54,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $_POST['message'];
 
     $sql = "INSERT INTO messages VALUES (:MESSAGE_TEXT, :user, NOW())";
-    $statement = [];
-    $statement['user'] = $email;
-    $statement['MESSAGE_TEXT'] = $message;
+    $params = [];
+    $params['user'] = $email;
+    $params['MESSAGE_TEXT'] = $message;
 
     $query = $pdo->prepare($sql);
-    $query->execute($statement);
+    $query->execute($params);
 
     header("Location: ../contact.php?status=200");
     exit();

@@ -48,8 +48,10 @@ if (!$user_login) {  // user should only be able to access this page after loggi
     exit();
 }
 
-$statement = $pdo->prepare("SELECT * FROM messages WHERE user = '$user_login'");
-$user_messages = $statement->fetchAll();
+$params = [];
+$params['login'] = $user_login;
+$statement = $pdo->prepare("SELECT * FROM messages WHERE user = :login");
+$user_messages = $statement->fetchAll($params);
 
 ?>
 
