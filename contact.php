@@ -118,7 +118,7 @@ $user_messages = $statement->fetchAll();
             <h2>Previous Messages</h2>
             <?=
 
-            echo $user_messages;
+
 
             ?>
         </div>
