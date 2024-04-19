@@ -61,10 +61,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $query = $pdo->prepare($sql);
         $query->execute($params);
-
-        header("Location: ../login.php");
-        exit();
+    } else if ($_POST['req'] == "DELETE_MESSAGE") {
+        $msg_timestamp = $_POST['msg_timestamp'];
+        $sql = "DELETE FROM messages WHERE timestamp = :msg_timestamp";
+        $params = [];
+        $params['msg_timestamp'] = $msg_timestamp;
+        $query = $pdo->prepare($sql);
+        $query->execute($params);
     }
+    header("Location: ../login.php");
+    exit();
 }
 
 ?>
