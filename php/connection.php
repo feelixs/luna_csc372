@@ -50,7 +50,7 @@ function pdo(PDO $pdo, string $sql, array $arguments = null)
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if ($_GET['req'] == "SUBMIT_MESSAGE") {
+    if ($_POST['req'] == "SUBMIT_MESSAGE") {
         $email = $_POST['email'];
         $message = $_POST['message'];
 
