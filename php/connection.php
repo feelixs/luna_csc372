@@ -61,13 +61,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $query = $pdo->prepare($sql);
         $query->execute($params);
+
+        header("Location: ../logout.php"); // message sent, logout the user
+        exit();
     }
 }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-    <p>You will be redirected soon...</p>
-    <p>If you are not redirected, <a href="../contact.php">click here</a></p>
-</html>
