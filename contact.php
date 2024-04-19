@@ -117,14 +117,14 @@ $user_messages = pdo($pdo, $sql, ['user_login' => $user_login])->fetchAll();
             </form>
         </div>
         <div class="trans-contained-box padding-20 inner-div" style="text-align: left">
-            <h2>Previous Messages</h2>
+            <h2 style="text-align: center">Previous Messages</h2>
             <?php
             if ($user_messages) {
                 $i = 0;
                 foreach ($user_messages as $message) {
                     if ($i > 5) {
                         // only show the past 5 messages sent by the user
-                        echo "<div style='justify-content:left' class='flex-container'>";
+                        echo "<div style='justify-content:left;margin-top:10px;' class='flex-container rounded black-bg'>";
                         echo "&ensp;&ensp;&ensp;&ensp;<span>...</span>";
                         echo "</div>";
                         break;
