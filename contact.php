@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // email is the key, so gracefully fail on duplicate (if the email already has been registered)
         $user_sql = "INSERT INTO users (email) VALUES (:email) ON DUPLICATE KEY UPDATE email=email";
         $params = [];
-        $params['user'] = $parse_email;
+        $params['email'] = $parse_email;
         $query = $pdo->prepare($user_sql);
         $query->execute($params);
     }
