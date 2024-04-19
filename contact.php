@@ -121,15 +121,18 @@ $user_messages = pdo($pdo, $sql, ['user_login' => $user_login])->fetchAll();
             if ($user_messages) {
                 $i = 0;
                 foreach ($user_messages as $message) {
-                    echo "<div class='flex-container'>";
+                    if ($i > 5) {
+                        // only show the past 5 messages sent by the user
+                        echo "<div style='justify-content:left' class='flex-container'>";
+                        echo "&ensp;&ensp;&ensp;&ensp;<span>...</span>";
+                        echo "</div>";
+                        break;
+                    }
+                    echo "<div style='justify-content:left' class='flex-container'>";
                     echo "<span class='orange'>" . $message['timestamp'] . "</span>";
                     echo "&ensp;&ensp;&ensp;&ensp;<span>" . $message['MESSAGE_TEXT'] . "</span>";
                     echo "</div>";
                     $i++;
-                    if ($i > 5) {
-                        // only show the past 5 messages sent by the user
-                        break;
-                    }
                 }
             } else {
                 echo "<p>No messages found</p>";
