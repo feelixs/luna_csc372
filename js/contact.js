@@ -11,25 +11,28 @@ $(document).ready(function () {
     cntDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp',
         'images/buttons/globe-white-es.webp', $('#change-language-img')))
 
-    // load the current langague from the document's 'lang' attribute, which was set by the server (django)
+    // load the current langague from the document's 'lang' attribute, which was set by the php server
     var currentLang = $('html').attr('lang');
     console.log(`Loading the user's current language as ${currentLang}`);
     loadContentInLang(currentLang);
 })
+
 
 function applyMainLanguageChange(newlang) {
     /*
         Applies language change to the page's main text, this will be overriden for each page
     */
     var $contactTitle = $('#page-title');
-    var $emailTitle = $('#contact-email-header');
     var $msgTitle = $('#contact-msg-header');
+    var $sendingMsg = $('#sending-info');
+    var $notYou = $('#not-you');
 
     // update page title, nav text, and various titles across the page
     document.title = newlang === 'es' ? 'Luna | Contacto' : 'Luna | Contact';
     $contactTitle.html(newlang === 'es' ? 'Contacto' : 'Contact Us');
-    $emailTitle.html(newlang === 'es' ? 'Tu correo electrónico:' : 'Your Email:');
     $msgTitle.html(newlang === 'es' ? 'Tu Mensaje:' : 'Your Message:');
+    $sendingMsg.html(newlang === 'es' ? 'Enviar mensaje como:' : 'Sending message as:');
+    $notYou.html(newlang === 'es' ? 'No eres tú?' : 'Not you?');
 }
 
 function loadContentInLang(language) {
@@ -45,3 +48,11 @@ function loadContentInLang(language) {
         cntDualImages[i].getImg(language);
     }
 }
+
+$('#contact-form').on('submit',  function(e) {
+    var message = $('#submit-txtarea').val();
+    if (message.length > 1000) {
+        alert("Your message should be less than 1000 characters.");
+        e.preventDefault() // prevent form submission
+    }
+});

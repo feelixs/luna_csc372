@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <field>
+        <name>Form Description</name>
+        <en>Please enter the email address you wish to use when contacting us</en>
+        <es>Por favor ingrese la dirección de correo electrónico que desea utilizar cuando se comunique con nosotros</es>
+    </field>
+    <field>
+        <name>Form Description</name>
+        <en>I agree to share my email, and to receive message(s) in my inbox in response, if applicable.</en>
+        <es>Acepto compartir mi correo electrónico y recibir mensajes en mi bandeja de entrada en respuesta, si corresponde.</es>
+    </field>
+    <field>
+        <name>Expect a response</name>
+        <en>Are you expecting a response to your message(s)?</en>
+        <es>¿Espera una respuesta a su mensaje(s)?</es>
+    </field>
+</root>

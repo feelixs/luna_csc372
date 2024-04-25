@@ -13,10 +13,9 @@ $(document).ready(function () {
     homeDualImages.push(new DualLangImage('images/buttons/globe-white-en.webp',
         'images/buttons/globe-white-es.webp', $('#change-language-img')))
 
-    // load the current langague from the document's 'lang' attribute, which was set by the server (django)
+    // load the current langague from the document's 'lang' attribute, which was set by the php server
     var currentLang = $('html').attr('lang');
     console.log(`Loading the user's current language as ${currentLang}`);
-
     loadPatreonButton();
     loadContentInLang(currentLang);
 });

@@ -1,12 +1,15 @@
 // we need to set this here to have its scope be everywhere, we'll change it later
 // - each webpage has its own associated script, which will set the currentlang in document.ready
-var currentLang = "en";
+var currentLang = 'en';
+var $langForm = $('#language-form');
+var $langInput = $('#language-input');
 
 
-function toggleLanguage() {
-    /*
-       Swaps between Spanish and English, and update the page's text to the new lang
-    */
+$langForm.on('submit', function(e) {
+    // function to submit the language value of the form to the page's php
+
+    e.preventDefault();
+
     let oldLang = $('html').attr('lang'); // get the current language (the actual currentLang var might be out of date)
     if (oldLang === 'en') {
         currentLang = 'es';
@@ -14,25 +17,9 @@ function toggleLanguage() {
         currentLang = 'en';
     }
 
-    console.log(`Language changed from ${oldLang} to ${currentLang}`)
-
-    /* TODO: will implement in the future
-    // save the user's current language on the server (cookie)
-    let setLangXHR = new XMLHttpRequest();
-    setLangXHR.onload = function () {
-        if (setLangXHR.status === 200) {
-            console.log(`Cached '${currentLang}' as the user's current language`)
-        } else {
-            console.log(`Error caching '${currentLang}' as the user's current language`)
-        }
-    }
-    setLangXHR.open('POST', `https://trioluna.com/api/set-language?language=${currentLang}`, true);
-    setLangXHR.send(null);
-    */
-
-    document.documentElement.lang = currentLang; // update the page's lang attribute
-    loadContentInLang(currentLang);
-}
+    $langInput.val(currentLang);
+    this.submit();
+});
 
 function applyNavLanguageChange(newLang) {
     /*

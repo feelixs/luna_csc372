@@ -15,6 +15,31 @@ footer {
     color: white;
 }
 
+.mini-text {
+    font-size: 0.8em;
+}
+
+button.text-btn {
+    padding: 0;
+    background: none;
+    border: none;
+    text-align: inherit;
+    font-size: inherit;
+    margin: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: #5a97e1;
+}
+
+button.text-btn:hover {
+   text-decoration: underline;
+    color: #c69ee3;
+}
+
+.orange {
+    color: #ff7f50;
+}
+
 .center-text {
     text-align: center;
 }
